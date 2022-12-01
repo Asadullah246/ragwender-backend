@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+
+    <!-- Favicon -->
+    <!-- <link rel="shortcut icon" href="assets/images/index.png" /> -->
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="/dist/icons/bootstrap-icons/bootstrap-icons.min.css" type="text/css">
+    <!-- Bootstrap Docs -->
+    <link rel="stylesheet" href="/dist/css/bootstrap-docs.css" type="text/css">
+    <!-- Slick slide -->
+    <link rel="stylesheet" href="/libs/slick/slick.css" type="text/css">
+    <link rel="stylesheet" href="/libs/slick/slick-theme.css" type="text/css">
+    <link href="/dist/css/jquery.multiselect.css" rel="stylesheet" type="text/css">
+    <!-- Main style file -->
+    <link rel="stylesheet" href="/dist/css/app.min.css" type="text/css">
+    <link rel="stylesheet" href="/dist/css/layout.css" type="text/css">
+    <link rel="stylesheet" href="/dist/css/responsive.css" type="text/css">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    {% block head %}{% endblock head %}
+</head>
+
+<body>
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="preloader-icon"></div>
+    </div>
+    <!-- ./ preloader -->
+
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- <div class="col-md-1">
+                    <div class="menu-toggle-btn">                        
+                        <a href="#">
+                            <i class="bi bi-list"></i>
+                        </a>
+                    </div>
+                </div> -->
+                <div class="col-md-3">
+                    <div class="menu-toggle-btn">
+                        <!-- Menu close button for mobile devices -->
+                        <a href="#">
+                            <i class="bi bi-list"></i>
+                        </a>
+                    </div>
+
+                    <a href="/"><img width="104" src="/images/logo.png" alt=""></a>
+                </div>
+                <div class="col-md-2 dhide">
+                    <!---       <div class="nav-link-notify">
+                    <a href="#" class="nav-link" data-count="2" data-sidebar-target="#notifications">
+                        <i class="bi bi-bell-fill icon-lg"></i>
+                    </a>
+                </div>-->
+                    <div class="Dropdown-2"><span>Admin</span> <img src="/images/admin-user.png" alt="">
+                        <div class="Dropdown-content-2">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <h5>Welcome</h5>
+                                    <!-- <a href="#"><i class="bi bi-lock"></i> Logout</a> -->
+                                    <button onclick="logout()">Logout</button>
+                                    <hr>
+                                    <ul>
+                                        <li><a href="#"><i class="bi bi-pencil-square"></i> Edit
+                                                Profile</a>
+                                        </li>
+                                        <li><a href="#"><i class="bi bi-person"></i> Visit Site</a></li>
+                                        <li><a href="#"><i class="bi bi-key"></i> Change Password</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+                <div class="col-md-3 noti-adm mhide">
+                    <!--<div class="nav-link-notify">
+                    <a href="#" class="nav-link" data-count="2" data-sidebar-target="#notifications">
+                        <i class="bi bi-bell-fill icon-lg"></i>
+                    </a>
+                </div>-->
+                    <div class="Dropdown-2">
+                        <span>Admin</span> <img src="/images/admin-user.png" alt="">
+                        <div class="Dropdown-content-2">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <h5>Welcome</h5>
+                                    <!-- <a href="#"><i class="bi bi-lock"></i> Logout</a> -->
+                                    <button onclick="logout()">Logout</button>
+                                    <hr>
+                                    <ul>
+                                        <li><a href="#"><i class="bi bi-pencil-square"></i> Edit
+                                                Profile</a> 
+                                        </li>
+                                        <li><a href="#"><i class="bi bi-person"></i> Visit Site</a></li>
+                                        <li><a href="#"><i class="bi bi-key"></i> Change Password</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% include "pageComponents/sidebar.html" %}
+
+    <div class="layout-wrapper">
+        {% block content %}
+        {% endblock content %} 
+
+    </div>
+
+
+
+    <!-- Bundle scripts -->
+    <script src="/libs/bundle.js"></script>
+    <!-- Slick slide -->
+    <script src="/libs/slick/slick.min.js"></script>
+    <!-- Examples -->
+    <script src="/dist/js/examples/dashboard.js"></script>
+    <script src="/dist/js/examples/users.js"></script>
+    <script src="/dist/js/custom-select.js" type="text/javascript"></script>
+    <script src="/dist/js/jquery.multiselect.js" type="text/javascript"></script>
+    <!-- Main Javascript file -->
+    <script src="/dist/js/app.min.js"></script>
+    <script src="/dist/js/custom.js"></script>
+    <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+        jQuery('select[multiple]').multiselect({
+            columns: 2,
+            placeholder: 'Select options'
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            CKEDITOR.replace('text_editor');
+        });
+    </script>
+    <script type="text/javascript">
+        var variant_row = 4;
+        function addSizeCaption() {
+            html = '<tbody id="variant-row' + variant_row + '">';
+            html += '  <tr>';
+            html += '<td>';
+            html += '<input type="text" name="catcaptionsize[' + variant_row + ']" value="" class="form-control">';
+
+            html += '</td> <td><input type="text" class="form-control" name="catsizesortorder[' + variant_row + ']"  aria-label="fname" aria-describedby="basic-addon2" placeholder="0" value=""></td>';
+            html += '<td><a onclick="$(\'#variant-row' + variant_row + '\').remove();"><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>';
+            html += '  </tr>';
+            html += '</tbody>';
+            $('#rwsvariant tfoot').before(html);
+
+            variant_row++;
+        }
+        var variant_row = 4;
+        function addProductAttributes() {
+            //alert('a');	
+            html = '<tbody id="variant-row' + variant_row + '">';
+            html += '  <tr>';
+            html += '    <td >';
+            html += '<input type="text" name="catcaptionsizetest[' + variant_row + ']" value="" class="form-control" placeholder="Caption">';
+            html += '</td>';
+            html += '    <td >';
+            html += '<input type="text" name="catcaptionsizetest[' + variant_row + ']" value="" class="form-control" placeholder="Value">';
+            html += '</td>';
+
+            html += '<td><input type="text" class="form-control" name="catsizesortorder[' + variant_row + ']" aria-label="fname" aria-describedby="basic-addon2" placeholder="0" value=""></td>';
+            html += '<td><a onclick="$(\'#variant-row' + variant_row + '\').remove();"><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>';
+            html += '  </tr>';
+            html += '</tbody>';
+            $('#pills-attributes tfoot').before(html);
+
+            variant_row++;
+        }
+        function addProductVairants() {
+            //alert('a');	
+            html = '<tbody id="variant-row' + variant_row + '">';
+            html += '  <tr>';
+            html += '    <td >';
+            html += '<input type="text" name="catcaptionsizetest[' + variant_row + ']" value="" class="form-control" placeholder="Code">';
+            html += '</td>';
+
+            html += ' <td ><input type="text" name="catcaptionsizetest[' + variant_row + ']" value="" class="form-control" placeholder="Qty"></td>';
+
+            // html += ' <td ><select name="sources" id="sources" class="custom-select sources" data-placeholder="Instock">                   <option value="1" selected="selected">In Stock</option>                   <option value="0">Out Of Stock</option>                   <option value="2">Pre-Order</option>                </select></td>';
+
+            html += '<td><select name="sources" id="sources" class="custom-select sources form-control" data-placeholder="Instock" style="color: #7a7878; background: #fff url(https://clientsdisplay.com/html/rwsecom/assets/images/gr-caret.png) no-repeat 84% 14px;"><option value="1" selected="selected">In Stock</option><option value="0">Out Of Stock</option><option value="2">Pre-Order</option></select></td>';
+
+            html += ' <td><input type="text" name="catcaptionsizetest[' + variant_row + ']" value="" class="form-control" placeholder="Regular Price"></td>';
+
+            html += ' <td><input type="text" name="catcaptionsizetest[' + variant_row + ']" value="" class="form-control" placeholder="Sale Price"></td>';
+
+            html += '<td><select name="sources" id="sources" class="custom-select sources form-control" data-placeholder="Size" style="color: #7a7878; background: #fff url(https://clientsdisplay.com/html/rwsecom/assets/images/gr-caret.png) no-repeat 84% 14px;"><option value="1">XS</option><option value="2" selected="selected">S</option><option value="3">M</option><option value="4">L</option><option value="5">XL</option><option value="6">2XL</option><option value="7">3XL</option><option value="8">4XL</option><option value="9">5XL</option><option value="10">6XL</option><option value="11">7XL</option><option value="12">8XL</option><option value="13">9XL</option><option value="14">26</option><option value="15">28</option><option value="16">30</option><option value="17">32</option><option value="18">34</option><option value="19">36</option><option value="20">38</option><option value="21">40</option><option value="22">42</option><option value="23">44</option><option value="24">46</option><option value="25">48</option><option value="26">50</option><option value="27">52</option><option value="28">54</option><option value="29">2.1</option><option value="30">2.2</option><option value="31">2.3</option><option value="32">2.4</option><option value="33">2.6</option><option value="34">2.8</option><option value="35">Adjustable</option><option value="36">One Size</option><option value="37">1</option><option value="38">2</option><option value="39">3</option><option value="40">4</option><option value="41">5</option><option value="42">6</option><option value="43">7</option><option value="44">8</option><option value="45">9</option><option value="46">10</option><option value="47">11</option><option value="48">12</option><option value="49">13</option><option value="50">14</option><option value="51">15</option><option value="52">16</option><option value="53">17</option><option value="54">18</option><option value="55">19</option><option value="56">20</option><option value="57">21</option><option value="58">22</option><option value="59">23</option><option value="60">24</option><option value="61">25</option><option value="62">27</option><option value="63">29</option><option value="64">1</option><option value="65">1.5</option><option value="66">2</option><option value="67">2.25</option><option value="68">2.5</option><option value="69">3</option><option value="70">3.5</option></select>';
+
+            html += '<td><input type="text" class="form-control" name="catsizesortorder[' + variant_row + ']"  aria-label="fname" aria-describedby="basic-addon2" placeholder="0" value=""></td>';
+
+            html += '<td><a onclick="$(\'#variant-row' + variant_row + '\').remove();"><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>';
+            html += '  </tr>';
+            html += '</tbody>';
+            $('#pills-variants tfoot').before(html);
+
+            variant_row++;
+        }
+
+        var variant_row_images = 0;
+        function addCatImages() {
+            html = '<tbody id="variant-row' + variant_row + '">';
+            html += '  <tr>';
+            html += '    <td >';
+            html += '<input name="catreadyimage[' + variant_row + ']"  id="status" type="file" data-placeholder="status">';
+
+            html += '</td> <td ></td><td ><input type="text" class="form-control" aria-label="fname" aria-describedby="basic-addon2" placeholder="" value="0"></td>';
+            html += '<td><a onclick="$(\'#variant-row' + variant_row + '\').remove();"><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>';
+            html += '  </tr>';
+            html += '</tbody>';
+            $('#rwscatreadyimage tfoot').before(html);
+
+            variant_row++;
+        }
+
+    </script>
+    <script>
+
+        
+        function logout(){
+            console.log("CLICKDKFJ"); 
+            fetch("/v1/logout",{  
+                method:"GET",
+                 
+                
+            })
+            .then(data=>{
+                if(data.status==200){ 
+                    window.location.href="/v1/login" ;
+                    
+                }
+            })
+            .then(err=>{
+                console.log(err);  
+            })
+            
+        }
+    </script>
+
+  
+
+    {% block customjs %}{% endblock customjs %}
+
+</body>
+
+</html>

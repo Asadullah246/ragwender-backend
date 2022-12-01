@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- header -->
+  <div class="header">
+    <div class="page-title">Edit Redirection</div>
+    <div class="header-bar ms-auto">
+       <!-- <ul class="navbar-nav justify-content-end gap-3">
+       <li class="nav-item">
+          <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='redirection-insert.php';" >Insert</button>
+       </li>
+       <li class="nav-item">
+          <button type="button" class="btn btn-secondary btn-icon-right">Delete </button>
+       </li>
+    </ul> -->
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive" tabindex="1">
+             <table id="users" class="table table-custom table-lg">
+                <tbody>
+                   <tr>
+                      <td>New URL :</td>
+                      <td><input name="txtcatname" type="text" id="txtcatname" value="https://atvenco.com/women-designer-kurta" class="form-control" aria-label="txtcatname" aria-describedby="basic-addon1"><br />
+                         Complete URL with HTTP</td>
+                   </tr>
+                   <tr>
+                      <td>Old URL:</td>
+                      <td><textarea name="Test" id="Test" class="form-control" value="/category/kurta-design-for-women">/category/kurta-design-for-women</textarea></td>
+                   </tr>
+                   <tr>
+                      <td>Status:</td>
+                      <td>
+                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                            <option value="0">Status</option>
+                            <option value="1">Enable</option>
+                            <option value="2">Disable</option>
+                         </select>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td colspan="2">
+                         <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='' ">Submit</button> &nbsp;
+                         <button type="button" class="btn btn-secondary btn-icon-right" onclick="window.location.href='' ">Cancel</button>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

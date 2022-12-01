@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Invoice Number <span style="color:#FF0000;">AV-1000247</span></div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='';">Back to Order</button>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <tr class="rwsth">
+                      <th width="48%">Shipping Address</th>
+                      <th width="48%">Order Details</th>
+                   </tr>
+                </thead>
+                <tbody class="category_table">
+                   <tr class="rwspending">
+                      <td width="48%" valign="top">Vinupriya Rajasekaran<br />
+                         vinupriyarajasekaran@gmail.com<br />
+                         8344641551<br />
+                         No - 80 , Amudham Colony, Mahalakshmi Nagar, Nandhivaram, Guduvanchery<br />
+                         Chennai<br />
+                         603202<br />
+                         India
+                      </td>
+                      <td width="48%" valign="top">
+                         <strong>Order Status:</strong> &nbsp;Pending<br />
+                         <strong>Mode of Payment:</strong> &nbsp;COD<br />
+                         <strong>Delivery Date &amp; Time Slot</strong>: &nbsp; 8 Am to 9 Pm<br /><br /> Received by: &nbsp;<br />
+                         <strong>Customer Account Details</strong>
+                         <strong>Note:<br /> Please check all products quantity &amp; quality at the time of delivery</strong>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+    <div class="manufacsearch table-responsive" tabindex="2" style="overflow: hidden; outline: none;">
+       <table id="users" class="table table-custom table-lg">
+          <tbody>
+             <tr>
+                <td style="font-size: 16px;"><strong>Purchased Item(s)</strong></td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <tr class="rwsth">
+                      <th>#</th>
+                      <th>Brand</th>
+                      <th>Product Description</th>
+                      <th>Status</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th>Sub Total</th>
+                   </tr>
+                </thead>
+                <tbody class="category_table">
+                   <tr class="rwspending">
+                      <td>1</td>
+                      <td>PIOUSPICK</td>
+                      <td>Dabu block natural print pure cotton fabric(PF0032,Indigo)<br /> SKU:PK0032_2.5<br /> Size: <strong>2.5</strong></td>
+                      <td>
+                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                            <option value="0">Status</option>
+                            <option value="1">Pending</option>
+                            <option value="2">Accepted &amp; Processing</option>
+                            <option value="3">Packaged</option>
+                            <option value="4">In Transit</option>
+                            <option value="5">Delivered</option>
+                            <option value="8">Cancellation in Process</option>
+                            <option value="9">Return in Process</option>
+                            <option value="10">Return Accepted</option>
+                            <option value="11">Cancellation Accepted</option>
+                            <option value="12">Cancellation Resolved</option>
+                            <option value="13">Return Resolved</option>
+                         </select>
+                      </td>
+                      <td>1</td>
+                      <td>Rs 381.00</td>
+                      <td>Rs 381.00</td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>1</td>
+                      <td>PIOUSPICK</td>
+                      <td>Dabu block natural print pure cotton fabric(PF0032,Indigo)<br /> SKU:PK0032_2.5<br /> Size: <strong>2.5</strong></td>
+                      <td>
+                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                            <option value="0">Status</option>
+                            <option value="1">Pending</option>
+                            <option value="2">Accepted &amp; Processing</option>
+                            <option value="3">Packaged</option>
+                            <option value="4">In Transit</option>
+                            <option value="5">Delivered</option>
+                            <option value="8">Cancellation in Process</option>
+                            <option value="9">Return in Process</option>
+                            <option value="10">Return Accepted</option>
+                            <option value="11">Cancellation Accepted</option>
+                            <option value="12">Cancellation Resolved</option>
+                            <option value="13">Return Resolved</option>
+                         </select>
+                      </td>
+                      <td>1</td>
+                      <td>Rs 381.00</td>
+                      <td>Rs 381.00</td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><strong>Delivery Charges</strong></td>
+                      <td class="red-text"><strong>Free</strong></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><strong>Total Quantity</strong></td>
+                      <td class="red-text"><strong>2 item(s)</strong></td>
+                      <td><strong>Total Amount</strong></td>
+                      <td class="red-text"><strong>Rs. 1057</strong></td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <!-- header -->
+ <div class="header">
+    <div class="page-title">Review</div>
+    <!--    <div class="header-bar ms-auto">
+    <ul class="navbar-nav justify-content-end gap-3">
+       <li class="nav-item">
+          <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='';" >Export CSV</button>
+       </li>
+       <li class="nav-item">
+          <button type="button" class="btn btn-light btn-icon-right" onclick="window.location.href='';" >Inactive Monthly Status</button>
+       </li>
+       <li class="nav-item">
+          <button type="button" class="btn btn-secondary btn-icon-right">delete </button>
+       </li>
+    </ul>
+ </div> -->
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive" tabindex="1">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <tr class="rwsth">
+                      <th>ID</th>
+                      <th>Viewer Detail</th>
+                      <th>Images</th>
+                      <th>Description</th>
+                      <th>Rate</th>
+                      <th>Tempid</th>
+                      <th>Status</th>
+                      <th></th>
+                      <th><i class="bi bi-gear"></i></th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td>6</td>
+                      <td>Rena|244</td>
+                      <td></td>
+                      <td></td>
+                      <td>4.5</td>
+                      <td></td>
+                      <td>1</td>
+                      <td class="green-text">Enable</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="testimonials-insert.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>7</td>
+                      <td>Geeta|279</td>
+                      <td></td>
+                      <td></td>
+                      <td>4.3</td>
+                      <td></td>
+                      <td>1</td>
+                      <td class="green-text">Enable</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="testimonials-insert.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>8</td>
+                      <td>Poorvi|26</td>
+                      <td></td>
+                      <td></td>
+                      <td>4.9</td>
+                      <td></td>
+                      <td>1</td>
+                      <td class="green-text">Enable</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="testimonials-insert.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>9</td>
+                      <td>test|244</td>
+                      <td></td>
+                      <td></td>
+                      <td>4.2</td>
+                      <td></td>
+                      <td>0</td>
+                      <td class="red-text">Disable</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="testimonials-insert.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

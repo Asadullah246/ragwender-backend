@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <!-- header -->
+ <div class="header">
+    <div class="page-title">Store Settings</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive" tabindex="1" style="overflow: hidden; outline: none;">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <tr class="rwsth">
+                      <th>Name</th>
+                      <th>Value</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td>Store Name</td>
+                      <td><input name="txtcatname" type="text" id="txtcatname" value="Atvenco" class="form-control" aria-label="txtcatname" aria-describedby="basic-addon1"> </td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Store Email</td>
+                      <td><input name="email" type="text" id="email" value="atvenco@gmail.com" class="form-control" aria-label="email" aria-describedby="basic-addon2"> </td>
+                   </tr>
+                   <tr>
+                      <td>Store Owner Name</td>
+                      <td><input type="text" name="path" value="Sneh Tyagi" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Store Address</td>
+                      <td><textarea name="Test" id="Test" class="form-control" value="Test">Test</textarea></td>
+                   </tr>
+                   <tr>
+                      <td>Telephone</td>
+                      <td><input type="text" name="path" value="+91 9212250710" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Fax</td>
+                      <td><input type="text" name="path" value="n/a" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>Home Discount 1 Text</td>
+                      <td><input type="text" name="path" value="New Year Discount upto 60% off" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Home Discount 1 URL</td>
+                      <td><input type="text" name="path" value="https://atvenco.com/kurta-2-c.php" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>Home Discount 2 Text</td>
+                      <td><input type="text" name="path" value="Get 25% off Extra on purchases 1999 and above" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Home Discount 2 URL</td>
+                      <td><input type="text" name="path" value="https://atvenco.com/jewellery-13-c.php?a=1&PageNo=1" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>Auto Discount Price in Rs.</td>
+                      <td><input type="number" name="path" value="2500" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Auto Allowed Discount in %</td>
+                      <td><input type="number" name="path" value="10" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>Best Price Text</td>
+                      <td><input type="text" name="path" value="Shop for Rs. 2000 or more to get additional discount of 10%." class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Best Price Coupon</td>
+                      <td><input type="text" name="path" value="GTPP20" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>Minimum Delivery Order</td>
+                      <td><input type="text" name="path" value="10" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Shipping Applied under Delivery Order</td>
+                      <td><input type="text" name="path" value="1000" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>Shipping cost on Minimum Delivery Order</td>
+                      <td><input type="text" name="path" value="60" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Carry Bag Charge</td>
+                      <td><input type="text" name="path" value="10" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>1 Rewards points on Rs</td>
+                      <td><input type="text" name="path" value="100" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Sale on Selling Price or MRP</td>
+                      <td><input name="sellingprice" type="radio" value="S" checked="checked">&nbsp; Selling Price
+                         &nbsp; <input name="sellingprice" type="radio" value="M">&nbsp; MRP</td>
+                   </tr>
+                   <tr>
+                      <td>Delivery Slot</td>
+                      <td><textarea name="" id="" class="form-control">Atvenco embarks on a consensus between quality and price. At most competitive prices we offer you dresses made from quality fabrics. Smart little innovations enhance our subtle designs making you stand out. You will surely be asked, where did you get</textarea></td>
+                   </tr>
+                   <tr>
+                      <td colspan="2">
+                         <h5>SEO Details</h5>
+                      </td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Store Title / Home page Title</td>
+                      <td><input type="text" name="path" value="Women Long Kurta | BUY Designer Clothes Suit Online India" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>Meta Tag Description</td>
+                      <td><textarea name="" id="" class="form-control">BUY women long kurta, online designer kurta, clothes, suit sets, tops for women and girls with combo offer at online store India Atvenco.</textarea></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>Store Title / Home page Title</td>
+                      <td><input type="text" name="path" value="women long kurta, long kurta for women, women designer long kurta, women long kurta online india, long kurta online india, long kurta for girls, long kurta, women clothes India, women clothes online india, online clothes shopping for women, designer tops for girls, designer tops for women, designer suit sets for girls, readymade suit sets online india, readymade suit sets india, cotton suit sets online india, cotton suit sets india, combo offers for womens dresses, women dress combo offer india, women combo dresses online india" class="form-control" aria-label="path" aria-describedby="basic-addon3"> <br /> use commo , for multiple keywords </td>
+                   </tr>
+                   <tr>
+                      <td colspan="2">
+                         <h5>Email Details</h5>
+                      </td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>To Email</td>
+                      <td><input type="text" name="path" value="atvenco@gmail.com" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>To Email Name</td>
+                      <td><input type="text" name="path" value="Atvenco" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>From Email</td>
+                      <td><input type="text" name="path" value="info@atvenco.com" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>From Email Name</td>
+                      <td><input type="text" name="path" value="Atvenco Admin" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>URL Rewrite / Permalink</td>
+                      <td><input type="text" name="path" value="Yes" class="form-control" aria-label="path" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td colspan="2">
+                         <button class="btn btn-primary" type="button" id="btn-email" name="submit">
+                            <span>Submit</span>
+                         </button>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

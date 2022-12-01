@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Edit Page Content Insert</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+ <div class="card">
+ <div class="card-body">
+    <div class="table-responsive" tabindex="1" style="overflow: hidden; outline: none;">
+       <table id="users" class="table table-custom table-lg">
+          <tbody>
+             <tr>
+                <td>Page Title:</td>
+                <td><input name="txtcatname" type="text" id="txtcatname" value="" class="form-control" aria-label="txtcatname" aria-describedby="basic-addon1"> </td>
+             </tr>
+             <tr>
+                <td>Content Title:</td>
+                <td><input name="seoprefix-product" type="text" id="seoprefix-product" value="" class="form-control" aria-label="seoprefix-product" aria-describedby="basic-addon2"> </td>
+             </tr>
+             <tr>
+                <td>Content Description:</td>
+                <td><textarea name="text_editor" class="form-control" id="text_editor"></textarea></td>
+             </tr>
+             <tr>
+                <td colspan="2">
+                   <button class="btn btn-primary" type="button" id="btn-email" name="submit" >
+                   <span>Submit</span>
+                   </button> &nbsp;
+                   <button class="btn btn-secondary btn-icon-right" type="button" id="btn-email" name="submit" >
+                   <span>Cancel</span>
+                   </button>
+                </td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+ </div>
+ </div>
+ </div>
+{% endblock %}

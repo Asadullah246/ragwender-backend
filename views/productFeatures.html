@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header">
+    <div class="page-title">Product</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='manufacturer-insert.html';">Save </button>
+          </li>
+          <li class="nav-item">
+             <button type="button" class="btn btn-secondary btn-icon-right">Cancel </button>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <!-- header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <tr>
+                      <th>Name</th>
+                      <th>Value</th>
+                   </tr>
+                </thead>
+                <tbody class="category_table">
+                   <tr>
+                      <td>
+                         Select Products<br />
+                         <span style="font-size:11px; letter-spacing: 0.1rem;">Type product name</span>
+                      </td>
+                      <td>
+                         <input type="text" class="form-control" aria-label="lname" aria-describedby="basic-addon3">
+                      </td>
+                   </tr>
+                   <tr>
+                      <td></td>
+                      <td>
+                         <div id="product-related" class="scrollbox">
+                            <div id="product-related3" class="even"> Women cotton block print calf deep straight suits set with chiffon dupatta (PSK0003, Royal blue ,White) <img src="assets/images/delete.png" alt="" class="float-right">
+                            </div>
+                            <div id="product-related7" class="odd"> Women cotton block print calf deep straight suits set (PSK0007, Rust) <img src="assets/images/delete.png" alt="" class="float-right">
+                            </div>
+                            <div id="product-related8" class="even"> Women cotton block print calf deep straight suits set (PSK0008, White) <img src="assets/images/delete.png" alt="" class="float-right">
+                            </div>
+                            <div id="product-related9" class="odd"> Women cotton block print calf deep straight suits set (PSK0009, Red)<img src="assets/images/delete.png" alt="" class="float-right">
+                            </div>
+                         </div>
+
+
+
+
+
+
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Postcode</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <button type="button" class="btn btn-secondary btn-icon-right" onclick="window.location.href='';">Delete</button>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <!--    <div class="manufacsearch table-responsive">
+  <table id="users" class="table table-custom table-lg">
+          <tbody>                
+             <tr>                 
+                <td><select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                   <option value="0">Status</option>
+                   <option value="1">Pending</option>
+                   <option value="2">Accepted &amp; Processing</option>
+                   <option value="3">Packaged</option>
+                   <option value="4">In Transit</option>
+                   <option value="5">Delivered</option>
+                   <option value="8">Cancellation in Process</option>
+                   <option value="9">Return in Process</option>
+                   <option value="10">Return Accepted</option>
+                   <option value="11">Cancellation Accepted</option>
+                   <option value="12">Cancellation Resolved</option>
+                   <option value="13">Return Resolved</option>
+                   </select></td>
+                   <td><input type="submit" name="Submit" value="Delete" class="btn btn-secondary btn-icon-right"></td>
+             </tr>
+          </tbody>
+      </table>
+</div> -->
+    <div class="manufacsearch podcast table-responsive">
+       <table id="users" class="table table-custom table-lg">
+          <tbody>
+             <tr>
+                <td style="font-size: 16px;"><strong>Add Postcode</strong></td>
+                <td colspan="4">&nbsp;</td>
+             </tr>
+             <tr>
+                <td><input type="text" class="form-control" placeholder="Enter the postcode(Numeric value only)" aria-label="" aria-describedby="basic-addon1"></td>
+                <td><input type="text" class="form-control" placeholder="Enter the location" aria-label="" aria-describedby="basic-addon1"></td>
+                <td>Cash On Deliery (check for yes) <input class="form-check-input select-all" type="checkbox" checked></td>
+                <td><input type="text" class="form-control" placeholder="Enter the Minimum Order" aria-label="" aria-describedby="basic-addon1"></td>
+                <td><input type="submit" name="Submit" value="Add" class="submit_button"></td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <tr>
+                      <th>
+                         <input class="form-check-input select-all" type="checkbox" data-select-all-target="#users" id="defaultCheck1">
+                      </th>
+                      <th>Post Code</th>
+                      <th>Location</th>
+                      <th>COD</th>
+                      <th>Minimum Order</th>
+                      <th>Modify</th>
+                   </tr>
+                </thead>
+                <tbody class="category_table">
+                   <!--  <tr>
+                <td><input class="form-check-input" type="checkbox"></td>
+                <td>AV-1000247</td>
+                <td>Vinupriya<br /> Rajasekaran</td>
+                <td>vinupriyarajasekaran@gmail.com</td>
+                <td>8344641551</td>
+                <td>10 October 2022</td>                  
+             </tr> -->
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

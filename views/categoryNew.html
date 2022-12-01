@@ -1,0 +1,408 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="header">
+   <div class="page-title">Category New</div>
+   <div class="header-bar ms-auto">
+      <ul class="navbar-nav justify-content-end gap-3">
+         <li class="nav-item">
+            <button type="button" class="btn btn-primary btn-icon-right" onclick="saveData()">Save </button>
+         </li>
+         <li class="nav-item">
+            <button type="button" class="btn btn-secondary btn-icon-right">Cancel </button>
+         </li>
+      </ul>
+   </div>
+</div>
+<!-- ./ header -->
+
+<!-- content -->
+<div class="content ">
+   <ul class="nav nav-pills" id="pills-tab" role="tablist">
+      <li class="nav-item">
+         <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home" role="tab"
+            aria-controls="pills-home" aria-selected="false">General</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" href="#pills-contact" role="tab"
+            aria-controls="pills-contact" aria-selected="false"> Custom Size</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" id="pills-image-tab" data-bs-toggle="pill" href="#pills-image" role="tab"
+            aria-controls="pills-image" aria-selected="false">Ready Image</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" id="pills-seo-tab" data-bs-toggle="pill" href="#pills-seo" role="tab"
+            aria-controls="pills-seo" aria-selected="false">SEO Details</a>
+      </li>
+   </ul>
+
+
+   <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+         <div class="card">
+            <div class="card-body">
+               <div class="table-responsive" tabindex="1">
+                  <table id="users" class="table table-custom table-lg">
+                     <tbody>
+                        <tr>
+                           <td>Category Name</td>
+                           <td><input type="text" class="form-control categoryName" aria-label="categoryName"
+                                 aria-describedby="basic-addon1" required></td>
+                        </tr>
+                        <tr>
+                           <td>Small Title(For Admin use)</td>
+                           <td><input type="text" class="form-control smallTitle" aria-label="fname"
+                                 aria-describedby="basic-addon2" required></td>
+                        </tr>
+                        <tr>
+                           <td>SEO Prefix</td>
+                           <td><input type="text" class="form-control seoPrefix" aria-label="lname"
+                                 aria-describedby="basic-addon3" required></td>
+                        </tr>
+                        <tr>
+                           <td>Parent Category</td>
+                           <td><input type="text" class="form-control parentCategory" aria-label="lname"
+                                 aria-describedby="basic-addon3" required></td>
+                        </tr>
+
+                        <tr>
+                           <td> Category Menu image</td>
+                           <td><input name="file" id="status" type="file" class="menuImg" required></td>
+                        </tr>
+                        <tr>
+                           <td> Category Banner Image</td>
+                           <td><input name="file" id="status" type="file" class="bannerImg" required></td>
+                        </tr>
+                        <tr>
+                           <td> Category Image</td>
+                           <td><input name="file" id="status" type="file" class="catImg"  required></td>
+                        </tr>
+                        <tr>
+                           <td> Hide in Menu</td>
+                           <td><input name="chkfeatured" type="checkbox" id="chkfeatured" class="hideMenu" required />
+                           </td>
+                        </tr>
+                        <tr>
+                           <td> Show on Home page</td>
+                           <td><input name="chkfeatured" type="checkbox" id="chkfeatured" class="showOnHomePage"
+                                 required /></td>
+                        </tr>
+                        <tr>
+                           <td>Status</td>
+                           <td>
+                              <select name="sources" id="sources" class="custom-select sources status"
+                                 data-placeholder="Select Status">
+                                 <option value="0">Select Status</option>
+                                 <option value="1" selected="selected">Enabled</option>
+                                 <option value="2">Disabled</option>
+                              </select>
+                           </td>
+                        </tr>
+
+                        <tr>
+                           <td>States </td>
+                           <td>
+                              <!-- <select name="sources" id="sources" class="custom-select sources" data-placeholder="Select" multiple> -->
+                              <select id="country-state" name="country-state" class="states" multiple>
+                                 <option value="0">Select </option>
+                                 <option value="AN">Andaman and Nicobar Islands</option>
+                                 <option value="AP">Andhra Pradesh</option>
+                                 <option value="AR">Arunachal Pradesh</option>
+                                 <option value="AS">Assam</option>
+                                 <option value="BR">Bihar</option>
+                                 <option value="CH">Chandigarh</option>
+                                 <option value="CT">Chhattisgarh</option>
+                                 <option value="DN">Dadra and Nagar Haveli</option>
+                                 <option value="DD">Daman and Diu</option>
+                                 <option value="DL">Delhi</option>
+                                 <option value="GA">Goa</option>
+                                 <option value="GJ">Gujarat</option>
+                                 <option value="HR">Haryana</option>
+                                 <option value="HP">Himachal Pradesh</option>
+                                 <option value="JK">Jammu and Kashmir</option>
+                                 <option value="JH">Jharkhand</option>
+                                 <option value="KA">Karnataka</option>
+                                 <option value="KL">Kerala</option>
+                                 <option value="LA">Ladakh</option>
+                                 <option value="LD">Lakshadweep</option>
+                                 <option value="MP">Madhya Pradesh</option>
+                                 <option value="MH">Maharashtra</option>
+                                 <option value="MN">Manipur</option>
+                                 <option value="ML">Meghalaya</option>
+                                 <option value="MZ">Mizoram</option>
+                                 <option value="NL">Nagaland</option>
+                                 <option value="OR">Odisha</option>
+                                 <option value="PY">Puducherry</option>
+                                 <option value="PB">Punjab</option>
+                                 <option value="RJ">Rajasthan</option>
+                                 <option value="SK">Sikkim</option>
+                                 <option value="TN">Tamil Nadu</option>
+                                 <option value="TG">Telangana</option>
+                                 <option value="TR">Tripura</option>
+                                 <option value="UP">Uttar Pradesh</option>
+                                 <option value="UT">Uttarakhand</option>
+                                 <option value="WB">West Bengal</option>
+                              </select>
+                           </td>
+                        </tr>
+
+                        <tr>
+                           <td>Description</td>
+                           <td>
+                              <textarea name="text_editor" class="form-control description" id="text_editor"></textarea>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="2"><button class="btn btn-primary" type="button" name="submit"
+                                 onclick="saveGeneral()"><span>Save</span></button> &nbsp; <button
+                                 class="btn btn-secondary btn-icon-right" type="button"
+                                 name="cancel"><span>Cancel</span></button></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+         <div class="card">
+            <div class="card-body">
+               <div class="table-responsive" tabindex="1">
+                  <table id="rwsvariant" class="table table-custom table-lg">
+                     <thead>
+                        <tr>
+                           <th width="48%">Caption</th>
+                           <th width="47%">Sort Order</th>
+                           <th width="5%"><i class="bi bi-gear"></i></th>
+                        </tr>
+                     </thead>
+
+                     <tr>
+                        <td><input name="catcaptionsize[0]" type="text" class="form-control" aria-label="fname"
+                              aria-describedby="basic-addon2" placeholder="Shoulder (inches)"></td>
+                        <td><input type="text" name="catsizesortorder[0]" class="form-control" aria-label="fname"
+                              aria-describedby="basic-addon2" placeholder="" value="0"></td>
+
+                        <td><a onclick=""><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>
+                     </tr>
+                     <tr>
+                        <td><input type="text" name="catcaptionsize[1]" class="form-control" aria-label="fname"
+                              aria-describedby="basic-addon2" placeholder="Wrist (inches)"></td>
+                        <td><input type="text" name="catsizesortorder[1]" class="form-control" aria-label="fname"
+                              aria-describedby="basic-addon2" placeholder="" value="0"></td>
+                        <td><a onclick=""><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>
+                     </tr>
+
+                     <tr>
+                        <td><input type="text" name="catcaptionsize[2]" class="form-control" aria-label="fname"
+                              aria-describedby="basic-addon2" placeholder="Sleeves (inches)"></td>
+                        <td><input type="text" name="catsizesortorder[2]" class="form-control" aria-label="fname"
+                              aria-describedby="basic-addon2" placeholder="" value="0"></td>
+                        <td><a onclick=""><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>
+                     </tr>
+
+                     <tr>
+                        <td><input type="text" name="catcaptionsize[3]" class="form-control" aria-label="fname"
+                              aria-describedby="basic-addon2" placeholder="Arm Hole (inches)"></td>
+                        <td><input type="text" name="catsizesortorder[3]" class="form-control" aria-label="fname"
+                              aria-describedby="basic-addon2" placeholder="" value="0"></td>
+                        <td><a onclick=""><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>
+                     </tr>
+                     <tfoot>
+                        <tr>
+                           <td></td>
+                           <td colspan="2"><a onclick="addSizeCaption();" class="btn btn-primary btn-icon-right">Add
+                                 More Custom Size</a></td>
+                        </tr>
+                     </tfoot>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+      <div class="tab-pane fade" id="pills-image" role="tabpanel" aria-labelledby="pills-image-tab">
+         <div class="card">
+            <div class="card-body">
+               <div class="table-responsive" tabindex="1">
+                  <table id="rwscatreadyimage" class="table table-custom table-lg">
+                     <tbody>
+                        <tr>
+                           <th>Image</th>
+                           <th>Image</th>
+                           <th>Sort Order</th>
+                           <th><i class="bi bi-gear"></i></th>
+                        </tr>
+                        <tr>
+                           <td><input name="catreadyimage[0]" id="status" type="file" data-placeholder="status"></td>
+                           <td><img
+                                 src="https://www.atvenco.com/images/products/gallery/2021/10/26/PSK0001-3-640x936.jpg"
+                                 width="60" height="88"><br>images/products/gallery/2021/10/26/PSK0001-3.jpg
+                           </td>
+                           <td><input type="text" name="catimagessortorder[0]" class="form-control" aria-label="fname"
+                                 aria-describedby="basic-addon2" placeholder="" value="0"></td>
+                           <td><a onclick=""><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>
+                        </tr>
+                        <tr>
+                           <td><input name="catreadyimage[1]" id="status" type="file" data-placeholder="status"></td>
+                           <td><img
+                                 src="https://www.atvenco.com/images/products/gallery/2021/10/26/PSK0001-2-640x936.jpg"
+                                 width="60" height="88"><br>images/products/gallery/2021/10/26/PSK0001-2.jpg
+                           </td>
+                           <td><input type="text" name="catimagessortorder[1]" class="form-control" aria-label="fname"
+                                 aria-describedby="basic-addon2" placeholder="" value="0"></td>
+                           <td><a onclick=""><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>
+                        </tr>
+                        <tr>
+                           <td><input name="catreadyimage[2]" id="status" type="file" data-placeholder="status"></td>
+                           <td><img
+                                 src="https://www.atvenco.com/images/products/gallery/2021/10/26/844110_PSK0001-6-640x936.jpg"
+                                 width="60" height="88"><br>images/products/gallery/2021/10/26/844110_PSK0001-6.jpg
+                           </td>
+                           <td><input type="text" name="catimagessortorder[2]" class="form-control" aria-label="fname"
+                                 aria-describedby="basic-addon2" placeholder="" value="0"></td>
+                           <td><a onclick=""><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>
+                        </tr>
+                        <tr>
+                           <td><input name="catreadyimage[3]" id="status" type="file" data-placeholder="status"></td>
+                           <td><img
+                                 src="https://www.atvenco.com/images/products/gallery/2021/10/26/815488_PSK0001-5-640x936.jpg"
+                                 width="60" height="88"><br>images/products/gallery/2021/10/26/815488_PSK0001-5.jpg
+                           </td>
+                           <td><input type="text" name="catimagessortorder[3]" class="form-control" aria-label="fname"
+                                 aria-describedby="basic-addon2" placeholder="" value="0"></td>
+                           <td><a onclick=""><i class="bi bi-x text-danger" style="font-size: 25px;"></i></a></td>
+                        </tr>
+                     <tfoot>
+                        <tr>
+                           <td></td>
+                           <td colspan="3"><a onclick="addCatImages();" class="btn btn-primary btn-icon-right">Add More
+                                 Images</a></td>
+                        </tr>
+                     </tfoot>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-seo" role="tabpanel" aria-labelledby="pills-seo-tab">
+         <div class="card">
+            <div class="card-body">
+               <div class="table-responsive" tabindex="1">
+                  <table id="users" class="table table-custom table-lg">
+                     <tbody>
+                        <tr>
+                           <th colspan="2">SEO Details</th>
+                        </tr>
+                        <tr>
+                           <td>Page Title</td>
+                           <td><input type="text" class="form-control" aria-label="lname"
+                                 aria-describedby="basic-addon3"></td>
+                        </tr>
+                        <tr>
+                           <td>Meta Description</td>
+                           <td><input type="text" class="form-control" aria-label="lname"
+                                 aria-describedby="basic-addon3"></td>
+                        </tr>
+                        <tr>
+                           <td>Meta Keywords</td>
+                           <td><input type="text" class="form-control" aria-label="lname"
+                                 aria-describedby="basic-addon3"></td>
+                        </tr>
+                        <tr>
+                           <td>SEO URL</td>
+                           <td><input type="text" class="form-control" aria-label="lname"
+                                 aria-describedby="basic-addon3"></td>
+                        </tr>
+
+                        <tr>
+                           <td colspan="2"><button class="btn btn-primary" type="button"
+                                 name="submit"><span>Save</span></button> &nbsp; <button
+                                 class="btn btn-secondary btn-icon-right" type="button"
+                                 name="cancel"><span>Cancel</span></button></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<style type="text/css">
+   .table>:not(:last-child)>:last-child>* {
+      border-bottom: 1px solid rgba(0, 0, 0, .125);
+   }
+</style>
+
+{% endblock %}
+
+{% block customjs %}
+<script>
+   const categoryName = document.querySelector(".categoryName")
+   const smallTitle = document.querySelector(".smallTitle")
+   const seoPrefix = document.querySelector(".seoPrefix")
+   const parentCategory = document.querySelector(".parentCategory")
+   const hideMenu = document.querySelector(".hideMenu")
+   const showOnHomePage = document.querySelector(".showOnHomePage")
+   const status = document.querySelector(".status")
+   const states = document.querySelector(".states")
+   let description = document.querySelector(".description")
+   let menuImg = document.querySelector(".menuImg")
+   let bannerImg = document.querySelector(".bannerImg")
+   let catImg = document.querySelector(".catImg")
+
+
+   function saveGeneral() {
+
+
+      const generalData = {
+         category: categoryName.value,
+         small: smallTitle.value,
+         seo: seoPrefix.value
+      }
+      console.log(generalData);
+
+      const formData = new FormData();
+      // formData.append("fileToUpload", menuImg.files[0]);
+
+
+      // var ins = document.getElementById('fileToUpload').files.length;
+
+      // formData.append("fileToUpload[]", menuImg.files[0]);
+      // formData.append("fileToUpload[]", bannerImg.files[0]);
+      // formData.append("fileToUpload[]", catImg.files[0]);
+      formData.append("fileToUpload", catImg.file);
+
+      console.log(formData);
+
+      let data={
+         formda:formData
+      }
+
+      fetch("/v1/category/new", {
+         method: "POST",
+         // headers: {
+          "content-type": false, 
+         //"Content-Type": "multipart/form-data "   
+         // },
+         // body: JSON.stringify(generalData)
+         body: JSON.stringify(data)  
+
+      })
+        // .then(response => response.json()) 
+         .then(data => {
+            console.log(data);
+         })
+         .catch(err => {
+            console.log("err is", err);
+         })
+   }
+</script>
+{% endblock customjs %}

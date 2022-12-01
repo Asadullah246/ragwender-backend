@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <!-- header -->
+ <div class="header">
+    <div class="page-title">Product</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='/v1/products/insert';">Insert </button>  
+          </li>
+          <li class="nav-item">
+             <button type="button" class="btn btn-secondary btn-icon-right">delete </button>
+          </li>
+       </ul>
+    </div>
+ </div>
+
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="productsearch table-responsive">
+       <table id="users" class="table table-custom table-lg">
+          <tbody>
+             <tr>
+                <td><input name="keyword" type="text" id="keyword" placeholder="Keyword"></td>
+                <td><input name="category" type="text" id="category" placeholder="Category"></td>
+                <td><input name="keyword" type="text" id="keyword" placeholder="0"></td>
+                <td>New Arrival : <input name="chknewarrival" type="checkbox" id="chknewarrival"></td>
+                <td>Best Selling : <input name="chkbestselling" type="checkbox" id="chkbestselling"></td>
+                <td><input type="submit" name="Submit" value="Submit" class="submit_button" /></td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <tr>
+                      <th colspan="7">
+                         <h4>Total Products: 420</h4>
+                      </th>
+                   </tr>
+                   <tr>
+                      <th><input name="chktop" type="checkbox" id="chktop" value="checkbox" class="form-check-input" />
+                      </th>
+                      <th>Category ID</th>
+                      <th>SKU</th>
+                      <th>HSN No.</th>
+                      <th>Name</th>
+                      <th>Status</th>
+                      <th><i class="bi bi-gear"></i></th>
+                   </tr>
+                </thead>
+                <tbody class="category_table">
+                   <tr>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>1</td>
+                      <td>PSK0001</td>
+                      <td>62061090</td>
+                      <td>Women cotton block print calf deep straight suits set with chiffon dupatta (PSK0001, Yellow,White)</td>
+                      <td class="green-text"><strong>Enable</strong></td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="product-edit.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>2</td>
+                      <td>PSK0002</td>
+                      <td>62061090</td>
+                      <td>Women cotton block print calf deep straight suits set with chiffon dupatta (PSK0002, Royal blue ,White)</td>
+                      <td class="green-text"><strong>Enable</strong></td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="product-edit.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>3</td>
+                      <td>PSK0003</td>
+                      <td>62061090</td>
+                      <td>Women cotton block print calf deep straight suits set with chiffon dupatta (PSK0003, Royal blue ,White)</td>
+                      <td class="green-text"><strong>Enable</strong></td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="product-edit.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>4</td>
+                      <td>PSK0004</td>
+                      <td>62061090</td>
+                      <td>Women cotton block print calf deep straight suits set with chiffon dupatta (PSK0004, Maroon ,White)</td>
+                      <td class="green-text"><strong>Enable</strong></td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="product-edit.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

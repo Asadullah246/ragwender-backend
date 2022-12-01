@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Manufacturer Insert</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive" tabindex="1" style="overflow: hidden; outline: none;">
+             <table id="users" class="table table-custom table-lg">
+                <tbody>
+                   <tr>
+                      <td>Manufacturer Name</td>
+                      <td> <input type="email" class="form-control" aria-label="useremail" aria-describedby="basic-addon1"></td>
+                   </tr>
+                   <tr>
+                      <td>Description</td>
+                      <td><textarea name="sub_text_1" id="sub_text_1" class="form-control"></textarea></td>
+                   </tr>
+                   <tr>
+                      <td>Manufacturer Image</td>
+                      <td><input name="file" id="status" type="file" data-placeholder="status"></td>
+                   </tr>
+                   <tr>
+                      <td>Sort Order</td>
+                      <td> <input type="email" class="form-control" aria-label="useremail" aria-describedby="basic-addon1"></td>
+                   </tr>
+                   <tr>
+                      <td>Status</td>
+                      <td>
+                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Select Status">
+                            <option value="0">Select Status</option>
+                            <option value="1" selected="selected">Enabled</option>
+                            <option value="2">Disabled</option>
+                         </select>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td colspan="2">
+                         <h5>SEO Details</h5>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>Category Page Title</td>
+                      <td><input type="text" class="form-control" aria-label="lname" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>Meta Description</td>
+                      <td><textarea name="metadesc" id="metadesc" class="form-control"></textarea></td>
+                   </tr>
+                   <tr>
+                      <td>Meta Keywords</td>
+                      <td><textarea name="metakeyword" id="metakeyword" class="form-control"></textarea></td>
+                   </tr>
+                   <tr>
+                      <td>SEO URL</td>
+                      <td><input type="text" class="form-control" aria-label="lname" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td colspan="2">
+                         <button class="btn btn-primary" type="button" id="btn-email" name="submit">
+                            <span>Submit</span>
+                         </button>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

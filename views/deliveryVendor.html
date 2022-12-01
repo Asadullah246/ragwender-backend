@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Delivery Vendor</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='delivery-vendor-insert.php';" >Insert</button>
+          </li>
+          <li class="nav-item">
+             <button type="button" class="btn btn-secondary btn-icon-right" onclick="window.location.href='';" >Delete</button>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+ <div class="card">
+    <div class="card-body">
+       <div class="table-responsive">
+          <table id="users" class="table table-custom table-lg">
+             <thead>
+                <tr>
+                   <th>User Id</th>
+                   <th>
+                      <input class="form-check-input select-all" type="checkbox" data-select-all-target="#users"
+                         id="defaultCheck1">
+                   </th>
+                   <th>Name</th>
+                   <th>Username</th>
+                   <th>Password</th>
+                   <th>Pincode</th>
+                   <th>Location</th>
+                   <th>Status</th>
+                   <th><i class="bi bi-gear"></i></th>
+                </tr>
+             </thead>
+             <tbody class="category_table">
+                <!-- <tr>
+                   <td><strong>1</strong></td> 
+                   <td><input class="form-check-input" type="checkbox"></td>
+                   <td>Muskan</td>
+                   <td>gemn</td>
+                   <td>gemn@123</td>
+                   <td>12345678</td>
+                   <td>India</td>
+                   <td class="green-text">Enable</td>
+                   <td>
+                      <div class="dropdown">
+                         <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-three-dots"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                         </div>
+                      </div>
+                   </td>                                 
+                </tr> 
+                <tr>
+                   <td><strong>1</strong></td> 
+                   <td><input class="form-check-input" type="checkbox"></td>
+                   <td>Muskan</td>
+                   <td>gemn</td>
+                   <td>gemn@123</td>
+                   <td>12345678</td>
+                   <td>India</td>
+                   <td class="green-text">Enable</td>
+                   <td>
+                      <div class="dropdown">
+                         <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-three-dots"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                         </div>
+                      </div>
+                   </td>                                 
+                </tr>  -->
+                
+             </tbody>
+          </table>
+       </div>
+    </div>
+ </div>
+ </div>
+{% endblock %}

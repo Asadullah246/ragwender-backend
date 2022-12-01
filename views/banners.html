@@ -1,0 +1,95 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<div class="header">
+    <div class="page-title">Banners</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='banners-insert.php';" >Insert</button>
+          </li>
+          <li class="nav-item">
+             <button type="button" class="btn btn-secondary btn-icon-right" onclick="window.location.href='';" >Delete</button>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+ <div class="card">
+    <div class="card-body">
+       <div class="table-responsive">
+          <table id="users" class="table table-custom table-lg">
+             <thead>
+                <tr>
+                   <th>Id</th>
+                   <th>
+                      <input class="form-check-input select-all" type="checkbox" data-select-all-target="#users"
+                         id="defaultCheck1">
+                   </th>
+                   <th>Images</th>
+                   <th>Caption</th>
+                   <th>Status</th>
+                   <th><i class="bi bi-gear"></i></th>
+                </tr>
+             </thead>
+             <tbody class="category_table">
+                <tr>
+                   <td><strong>11</strong></td> 
+                   <td><input class="form-check-input" type="checkbox"></td>
+                   <td><img src="https://www.atvenco.com/images/banners/met_8553_lpg_948.jpg" style="max-width:100px; height:auto;"></td>
+                   <td><strong>Banner 4</strong></td>
+                   <td class="green-text"><strong>Enable</strong></td>
+                   <td>
+                      <div class="dropdown">
+                         <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-three-dots"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-end">
+                            <a href="banners-update.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                         </div>
+                      </div>
+                   </td>                                 
+                </tr> 
+                <tr>
+                   <td><strong>9</strong></td> 
+                   <td><input class="form-check-input" type="checkbox"></td>
+                   <td><img src="https://www.atvenco.com/images/banners/dfd_6522_tst_144.jpg" style="max-width:100px; height:auto;"></td>
+                   <td><strong>launch</strong></td>
+                   <td class="green-text"><strong>Enable</strong></td>
+                   <td>
+                      <div class="dropdown">
+                         <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-three-dots"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-end">
+                            <a href="banners-update.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                         </div>
+                      </div>
+                   </td>                                 
+                </tr>  
+                <tr>
+                   <td><strong>8</strong></td> 
+                   <td><input class="form-check-input" type="checkbox"></td>
+                   <td><img src="https://www.atvenco.com/images/banners/art_4060_lad_974.jpg" style="max-width:100px; height:auto;"></td>
+                   <td><strong>freebies</strong></td>
+                   <td class="green-text"><strong>Enable</strong></td>
+                   <td>
+                      <div class="dropdown">
+                         <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-three-dots"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-end">
+                            <a href="banners-update.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                         </div>
+                      </div>
+                   </td>                                 
+                </tr>   
+             </tbody>
+          </table>
+       </div>
+    </div>
+ </div>
+ </div>
+{% endblock %}

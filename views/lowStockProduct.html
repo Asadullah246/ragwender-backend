@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header">
+    <div class="page-title">Sales Reports</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive" tabindex="1">
+             <table id="users" class="table table-custom table-lg">
+                <tbody>
+                   <tr>
+                      <td style="font-size: 16px;"><strong>Low Stock Items</strong></td>
+                      <td><input type="submit" name="Submit" value="Export CSV" class="btn btn-primary btn-icon-right"></td>
+                   </tr>
+                   <tr>
+                      <td style="font-size: 16px;"><strong>Total Low Stock Item(s):</strong> <span style="color:#FF0000;">82</span></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+    <div class="p5"></div>
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive" tabindex="1">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <tr class="rwsth">
+                      <th>Product ID</th>
+                      <th>Product Name</th>
+                      <th>SKU</th>
+                      <th>Quantity</th>
+                      <th>Manufacturer</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr class="rwspending">
+                      <td>518</td>
+                      <td>Adjustable Crystal Finger Ring For Women & Girls</td>
+                      <td>RING0014</td>
+                      <td>5</td>
+                      <td></td>
+                   </tr>
+                   <tr class="rwspending">
+                      <td>517</td>
+                      <td>Adjustable Crystal Cubic Zirconia Heart Finger Ring For Women & Girls</td>
+                      <td>RING0013</td>
+                      <td>5</td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td colspan="5">
+                         <div class="pagination">
+                            <div class="results">
+                               <a href="#" class="search-next">Prev &#xab;</a>
+                               <a href="#"><b>1</b></a>
+                               <a href="#">2</a>
+                               <a href="#" class="search-next">Next &#xbb;</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

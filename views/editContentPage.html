@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Edit Page Content</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+ <div class="card">
+ <div class="card-body">
+    <div class="table-responsive" tabindex="1" style="overflow: hidden; outline: none;">
+       <table id="users" class="table table-custom table-lg">
+          <tbody>
+             <tr>
+                <td>Page Title:</td>
+                <td><input name="txtcatname" type="text" id="txtcatname" value="Why buy from Atvenco" class="form-control" aria-label="txtcatname" aria-describedby="basic-addon1"> </td>
+             </tr>
+             <tr>
+                <td>Content Title:</td>
+                <td><input name="seoprefix-product" type="text" id="seoprefix-product" value="Why buy from Atvenco" class="form-control" aria-label="seoprefix-product" aria-describedby="basic-addon2"> </td>
+             </tr>
+             <tr>
+                <td>Content Description:</td>
+                <td><textarea name="text_editor" class="form-control" id="text_editor">
+                   <p>Atvenco is focussed on both, healthy selling and smart buying. If our customers can buy products worthy of prices and are served well, the vendors must be extended all possible assistance to list price worthy quality products. Virtuous product offerings by vendors invites not only appreciation from customers but also their trust, all culminating into fair transactions and a win-win situation. Before it was engineered, this belief laid Atvenco’s foundation stone. Our every policy statement and rules for all engagements have been crafted and built around this idea. For example, commission to be charged from vendors has a direct impact on the product pricing. In order to empower the vendors to price their products most rationally we held rounds of discussions with them before we decided upon the commission to be charged in various categories and worked out structures which, on one hand do not hurt our vendors, well compensate our own staff and bring value for money for our customers.</p>
+ 
+                   <p>Our other area of focus was post sales service. We know that while our customers have expectations in terms of timely deliveries, options to exchange and return products, if they so wish to, feel happy about having bought at the lowest possible prices, rejoice having paid value for money, promptly receive response to every communication they initiate with us to their fullest satisfaction et al, our vendors too are concerned about smart product listing, timely pickups, fair exchanges and returns by customers, lowest commission rates to enable them to offer lowest possible prices and rotate their inventory, inventory clearance, transfer of sales proceeds and prompt communication with us. We have worked around these and many other areas to create strong systems and ensure quick disposal of all enquiries.</p>
+ 
+                   <p>We have inbuilt processes sensitive to your reviews and suggestions. And as we grow, we assure you to improve with your ideas to sell and buy.</p>
+ 
+                </textarea></td>
+             </tr>
+             <tr>
+                <td colspan="2">
+                   <button class="btn btn-primary" type="button" id="btn-email" name="submit" >
+                   <span>Submit</span>
+                   </button> &nbsp;
+                   <button class="btn btn-secondary btn-icon-right" type="button" id="btn-email" name="submit" >
+                   <span>Cancel</span>
+                   </button>
+                </td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+ </div>
+ </div>
+ </div>
+{% endblock %}

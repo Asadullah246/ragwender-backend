@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Category</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <!--  <button type="button" class="btn btn-primary btn-icon-right" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Insert </button>-->
+             <button type="button" class="btn btn-primary btn-icon-right"
+               onclick="window.location.href='category/new';" >Insert</button> 
+          </li>
+          <!-- <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right"  onclick="window.location.href='category-insert.php';" >Insert </button>
+          </li> -->
+          <li class="nav-item">
+             <button type="button" class="btn btn-secondary btn-icon-right">delete </button>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+ <div class="card">
+    <div class="card-body">
+       <div class="table-responsive">
+          <table id="users" class="table table-custom table-lg">
+             <thead>
+                <tr>
+                   <th>
+                      <input class="form-check-input select-all" type="checkbox" data-select-all-target="#users"
+                         id="defaultCheck1">
+                   </th>
+                   <th>Category Id</th>
+                   <th>Category Name</th>
+                   <th>Status</th>
+                   <th><i class="bi bi-gear"></i></th>
+                </tr>
+             </thead>
+             <tbody class="category_table">
+
+               {% for data in rows %}
+
+                <tr>
+                   <td><input class="form-check-input" type="checkbox"></td>
+                   <td>{{data['id']}}</td>
+                   <td><strong>{{data['name']}}</strong></td>
+                   <td class="green-text">Enable</td>
+                   <td>
+                      <div class="dropdown">
+                         <a href="#" data-bs-toggle="dropdown"
+                            class="btn btn-white"
+                            aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-three-dots"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-end">
+                            <a href="category/edit" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                         </div>
+                      </div>
+                   </td>
+                </tr>
+                {% endfor %} 
+                <!-- <tr>
+                   <td><input class="form-check-input" type="checkbox"></td>
+                   <td>2</td>
+                   <td>Clothing <i class="bi bi-arrow-right-short"></i> Kurta</td>
+                   <td class="green-text">Enable</td>
+                   <td>
+                      <div class="dropdown">
+                         <a href="#" data-bs-toggle="dropdown"
+                            class="btn btn-white"
+                            aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-three-dots"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-end">
+                            <a href="category_edit.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                         </div>
+                      </div>
+                   </td>
+                </tr>
+                <tr>
+                   <td><input class="form-check-input" type="checkbox"></td>
+                   <td>3</td>
+                   <td>Clothing <i class="bi bi-arrow-right-short"></i> Bridal & Party Wear</td>
+                   <td class="green-text">Enable</td>
+                   <td>
+                      <div class="dropdown">
+                         <a href="#" data-bs-toggle="dropdown"
+                            class="btn btn-white"
+                            aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-three-dots"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-end">
+                            <a href="category_edit.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                         </div>
+                      </div>
+                   </td>
+                </tr>                -->
+             </tbody>
+          </table>
+       </div>
+    </div>
+ </div>
+ </div>
+{% endblock %}

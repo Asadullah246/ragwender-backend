@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Home Categories section</div>
+    <div class="header-bar ms-auto">
+       <!-- <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">            
+             <button type="button" class="btn btn-primary btn-icon-right"  onclick="window.location.href='category-new.php';" >New</button>
+          </li>
+          <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right"  onclick="window.location.href='category-insert.php';" >Insert </button>
+          </li>
+          <li class="nav-item">
+             <button type="button" class="btn btn-secondary btn-icon-right">delete </button>
+          </li>
+       </ul> -->
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+ <div class="card">
+    <div class="card-body">
+       <div class="table-responsive">
+          <table id="users" class="table table-custom table-lg">
+             <thead>
+                <tr>
+                   <th>Catgory So.</th>
+                   <th>Category Name</th>
+                   <th><i class="bi bi-gear"></i></th>
+                </tr>
+             </thead>
+             <tbody class="category_table">
+                <tr>
+                   <td>1</td>
+                   <td><input name="" type="text" id="" value="Make the Impression in Party with Women Kurta and Kurti from Atvenco" class="form-control" aria-label="" aria-describedby="basic-addon1"></td>
+                   <td>
+                      <div class="dropdown">
+                         <a href="#" data-bs-toggle="dropdown"
+                            class="btn btn-white"
+                            aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-three-dots"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#" class="dropdown-item"><i class="bi bi-pencil-square"></i> Update</a>
+                         </div>
+                      </div>
+                   </td>
+                </tr>
+                <tr>
+                   <td>2</td>
+                   <td><input name="" type="text" id="" value="Kurtis & Tops" class="form-control" aria-label="" aria-describedby="basic-addon2"></td>
+                   <td>
+                      <div class="dropdown">
+                         <a href="#" data-bs-toggle="dropdown"
+                            class="btn btn-white"
+                            aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-three-dots"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#" class="dropdown-item"><i class="bi bi-pencil-square"></i> Update</a>
+                         </div>
+                      </div>
+                   </td>
+                </tr>
+                <tr>
+                   <td>3</td>
+                   <td><input name="" type="text" id="" value="Women Pant & Capris" class="form-control" aria-label="" aria-describedby="basic-addon3"></td>
+                   <td>
+                      <div class="dropdown">
+                         <a href="#" data-bs-toggle="dropdown"
+                            class="btn btn-white"
+                            aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-three-dots"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#" class="dropdown-item"><i class="bi bi-pencil-square"></i> Update</a>
+                         </div>
+                      </div>
+                   </td>
+                </tr>               
+             </tbody>
+          </table>
+       </div>
+    </div>
+ </div>
+ </div>
+{% endblock %}

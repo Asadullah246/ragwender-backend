@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- header -->
+  <div class="header">
+    <div class="page-title">Insert New User Group</div>
+    <div class="header-bar ms-auto">
+       <!-- <ul class="navbar-nav justify-content-end gap-3">
+       <li class="nav-item">
+          <button type="button" class="btn btn-primary btn-icon-right"  onclick="window.location.href='user-insert.php';" >Insert </button>
+       </li>
+       <li class="nav-item">
+          <button type="button" class="btn btn-secondary btn-icon-right">Delete</button>
+       </li>
+    </ul> -->
+    </div>
+ </div>
+ <!-- ./ header -->
+
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive" tabindex="1">
+             <table id="users" class="table table-custom table-lg">
+                <tbody>
+                   <tr>
+                      <td>Name</td>
+                      <td><input type="text" class="form-control" aria-label="lname" value="catalog only" aria-describedby="basic-addon3"></td>
+                   </tr>
+                   <tr>
+                      <td>Permission</td>
+                      <td>
+                         <input class="form-check-input" type="checkbox"> &nbsp;Manage Catalog <br />
+                         <input class="form-check-input" type="checkbox"> &nbsp;Manage Sales <br />
+                         <input class="form-check-input" type="checkbox"> &nbsp;Manage Reports
+                      </td>
+                   </tr>
+                   <tr>
+                      <td colspan="2">
+                         <button class="btn btn-primary" type="button" id="btn-email" name="submit"><span>Submit</span></button>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Manufacturer</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='manufacturer-insert.php';">Insert </button>
+          </li>
+          <li class="nav-item">
+             <button type="button" class="btn btn-secondary btn-icon-right">delete </button>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <div class="content ">
+    <div class="manufacsearch table-responsive">
+       <table id="users" class="table table-custom table-lg">
+          <tbody>
+             <tr>
+                <td><input name="keyword" type="text" id="keyword" placeholder="Keyword"> <input type="submit" name="Submit" value="Submit" class="submit_button" /></td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+    <!-- ./ header -->
+    <!-- content -->
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <tr>
+                      <th>Serial No.</th>
+                      <th><input class="form-check-input" type="checkbox"></th>
+                      <th>Manufacturer Name</th>
+                      <th>Sort Order</th>
+                      <th><i class="bi bi-gear"></i></th>
+                   </tr>
+                </thead>
+                <tbody class="category_table">
+                   <tr>
+                      <td>1</td>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>Piouspick</td>
+                      <td>0</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="manufacturer-edit.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>1</td>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>Piouspick</td>
+                      <td>0</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="manufacturer-edit.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

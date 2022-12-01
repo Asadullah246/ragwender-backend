@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Sales Reports</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive">
+             <table id="users" class="table table-custom table-lg">
+                <tbody>
+                   <tr>
+                      <td colspan="2">
+                         <h3>Orders Export</h3>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>Start Date</td>
+                      <td><input name="txtcatname" type="text" id="txtcatname" value="Start Date" class="form-control" aria-label="txtcatname" aria-describedby="basic-addon1"> </td>
+                   </tr>
+                   <tr>
+                      <td>End Date</td>
+                      <td><input name="seoprefix-product" type="text" id="seoprefix-product" value="End Date" class="form-control" aria-label="seoprefix-product" aria-describedby="basic-addon2"> </td>
+                   </tr>
+                   <tr>
+                      <td colspan="2">
+                         <button class="btn btn-primary" type="button" id="btn-email" name="submit">
+                            <span>Export</span>
+                         </button>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

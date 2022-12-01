@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Static Pages</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='edit_content_insert_page.php';">Insert</button>
+          </li>
+          <li class="nav-item">
+             <button type="button" class="btn btn-secondary btn-icon-right" onclick="window.location.href='';">Delete</button>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <tr>
+                      <th>S.No.</th>
+                      <th>
+                         <input class="form-check-input select-all" type="checkbox" data-select-all-target="#users" id="defaultCheck1">
+                      </th>
+                      <th>Page Title</th>
+                      <th><i class="bi bi-gear"></i></th>
+                   </tr>
+                </thead>
+                <tbody class="category_table">
+                   <tr>
+                      <td><strong>1</strong></td>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>Why Buy From Atvenco</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="edit_content_page.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td><strong>2</strong></td>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>Contact Us</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="edit_content_page.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td><strong>3</strong></td>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>Measurements</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="edit_content_page.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

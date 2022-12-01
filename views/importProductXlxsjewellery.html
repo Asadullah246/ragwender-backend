@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header">
+    <div class="page-title">Import Jewellery Product</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right"  onclick="window.location.href='manufacturer-insert.html';" >Save </button>
+          </li>
+          <li class="nav-item">
+             <button type="button" class="btn btn-secondary btn-icon-right">Cancel </button>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <!-- header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+    <div class="card-body">
+       <div class="table-responsive">
+          <table id="users" class="table table-custom table-lg">                  
+             <tbody class="category_table">  
+                <tr>
+                   <td>First column as column name :</td>
+                   <td  valign="middle">
+                      <input name="radiodata" type="radio" value="i"> &nbsp; Yes &nbsp;
+                      <input name="radiodata" type="radio" value="u" checked="checked"> &nbsp; No
+                   </td>
+                </tr>
+                <tr>
+                   <td>Upload CSV file not excel</td>
+                   <td valign="middle"><input name="file" id="status" type="file" required></td>
+                </tr>
+                <tr>
+                   <td></td>
+                   <td><button type="button" class="btn btn-primary btn-icon-right"  onclick="window.location.href='';" >Submit</button></td>
+                </tr> 
+             </tbody>
+          </table>
+       </div>
+    </div>
+    </div>
+ </div>
+{% endblock %}

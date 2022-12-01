@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <!-- header -->
+ <div class="header">
+    <div class="page-title">Delivery Vendor Insert</div>
+    <!--    <div class="header-bar ms-auto">
+    <ul class="navbar-nav justify-content-end gap-3">
+       <li class="nav-item">
+          <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='';" >Export CSV</button>
+       </li>
+       <li class="nav-item">
+          <button type="button" class="btn btn-light btn-icon-right" onclick="window.location.href='';" >Inactive Monthly Status</button>
+       </li>
+       <li class="nav-item">
+          <button type="button" class="btn btn-secondary btn-icon-right">delete </button>
+       </li>
+    </ul>
+ </div> -->
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive" tabindex="1">
+             <table id="users" class="table table-custom table-lg">
+                <tbody>
+                   <tr>
+                      <td>First Name</td>
+                      <td><input name="txtcatname" type="text" id="txtcatname" value="" class="form-control" aria-label="txtcatname" aria-describedby="basic-addon1"> </td>
+                   </tr>
+                   <tr>
+                      <td>Last Name</td>
+                      <td><input name="seoprefix-product" type="text" id="seoprefix-product" value="" class="form-control" aria-label="seoprefix-product" aria-describedby="basic-addon2"> </td>
+                   </tr>
+                   <tr>
+                      <td>Email</td>
+                      <td><input name="seoprefix-product" type="text" id="seoprefix-product" value="" class="form-control" aria-label="seoprefix-product" aria-describedby="basic-addon2"> </td>
+                   </tr>
+                   <tr>
+                      <td>Mobile</td>
+                      <td><input name="txtcatname" type="text" id="txtcatname" value="" class="form-control" aria-label="txtcatname" aria-describedby="basic-addon1"> </td>
+                   </tr>
+                   <tr>
+                      <td>Username</td>
+                      <td><input name="seoprefix-product" type="text" id="seoprefix-product" value="" class="form-control" aria-label="seoprefix-product" aria-describedby="basic-addon2"> </td>
+                   </tr>
+                   <tr>
+                      <td>Password</td>
+                      <td><input name="seoprefix-product" type="text" id="seoprefix-product" value="" class="form-control" aria-label="seoprefix-product" aria-describedby="basic-addon2"> </td>
+                   </tr>
+                   <tr>
+                      <td>Pincode</td>
+                      <td><input name="txtcatname" type="text" id="txtcatname" value="" class="form-control" aria-label="txtcatname" aria-describedby="basic-addon1"> </td>
+                   </tr>
+                   <tr>
+                      <td>Location</td>
+                      <td><input name="seoprefix-product" type="text" id="seoprefix-product" value="" class="form-control" aria-label="seoprefix-product" aria-describedby="basic-addon2"> </td>
+                   </tr>
+                   <tr>
+                      <td>Status</td>
+                      <td>
+                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                            <option value="0">Status</option>
+                            <option value="1">Enabled</option>
+                            <option value="2">Disabled</option>
+                         </select>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td colspan="2">
+                         <button class="btn btn-primary" type="button" id="btn-email" name="submit">
+                            <span>Submit</span>
+                         </button>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

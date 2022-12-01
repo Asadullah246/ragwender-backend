@@ -1,0 +1,286 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <!-- header -->
+ <div class="header">
+    <div class="page-title">Orders</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='';">Export CSV</button>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="manufacsearch table-responsive">
+       <table id="users" class="table table-custom table-lg">
+          <tbody>
+             <tr>
+                <td><select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                      <option value="0">Status</option>
+                      <option value="1">Pending</option>
+                      <option value="2">Accepted &amp; Processing</option>
+                      <option value="3">Packaged</option>
+                      <option value="4">In Transit</option>
+                      <option value="5">Delivered</option>
+                      <option value="8">Cancellation in Process</option>
+                      <option value="9">Return in Process</option>
+                      <option value="10">Return Accepted</option>
+                      <option value="11">Cancellation Accepted</option>
+                      <option value="12">Cancellation Resolved</option>
+                      <option value="13">Return Resolved</option>
+                   </select></td>
+                <td><input type="submit" name="Submit" value="Delete" class="btn btn-secondary btn-icon-right"></td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+    <div class="manufacsearch table-responsive">
+       <table id="users" class="table table-custom table-lg">
+          <tbody>
+             <tr>
+                <td style="font-size: 16px;"><strong>Total Order(s):</strong> <span style="color:#FF0000;">63</span></td>
+                <td><input type="submit" name="Submit" value="Update Status Without SMS" class="btn btn-primary btn-icon-right"></td>
+                <td colspan="3">&nbsp;</td>
+             </tr>
+             <tr>
+                <td><input type="email" class="form-control" placeholder="Search Keywords..." aria-label="useremail" aria-describedby="basic-addon1"></td>
+                <td><input type="date" class="form-control" placeholder="Start Date" aria-label="useremail" aria-describedby="basic-addon1"></td>
+                <td><input type="date" class="form-control" placeholder="End Date" aria-label="useremail" aria-describedby="basic-addon1"></td>
+                <td><select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                      <option value="0">Status</option>
+                      <option value="-1">All</option>
+                      <option value="1">Pending</option>
+                      <option value="2">Accepted &amp; Processing</option>
+                      <option value="3">Packaged</option>
+                      <option value="4">In Transit</option>
+                      <option value="5">Delivered</option>
+                      <option value="7">Failed</option>
+                      <option value="8">Cancellation in Process</option>
+                      <option value="9">Return in Process</option>
+                      <option value="10">Return Accepted</option>
+                      <option value="11">Cancellation Accepted</option>
+                      <option value="12">Cancellation Resolved</option>
+                      <option value="13">Return Resolved</option>
+                   </select></td>
+                <td><input type="submit" name="Submit" value="Search" class="submit_button"></td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <tr class="fnt-11 rwsth">
+                      <th>
+                         <input class="form-check-input select-all" type="checkbox" data-select-all-target="#users" id="defaultCheck1">
+                      </th>
+                      <th>Invoice<br /> Number <img src="assets/images/desc.png"></th>
+                      <th>Customer <img src="assets/images/desc.png"></th>
+                      <th>Email <img src="assets/images/asc.png"></th>
+                      <th>Mobile <img src="assets/images/desc.png"></th>
+                      <th>Order<br /> Date <img src="assets/images/desc.png"><br /> </th>
+                      <th>Delivery<br /> Date <img src="assets/images/desc.png"><br /> </th>
+                      <th>Payment<br /> Mode <img src="assets/images/desc.png"><br /> </th>
+                      <th>Status <img src="assets/images/desc.png"> &nbsp;<input type="button" name="rwsosubmit" id="rwsosubmit" class="btn btn-primary btn-icon-right" value="Update" style="padding: 0.275rem 0.275rem;  font-size: 11px;"> </th>
+                      <th>Order<br /> Comment</th>
+                      <th>Bill<br /> Amount </th>
+                      <th><i class="bi bi-gear"></i></th>
+                   </tr>
+                </thead>
+                <tbody class="category_table">
+                   <tr class="fnt-11 rwspending">
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>AV-1000247</td>
+                      <td>Vinupriya<br /> Rajasekaran</td>
+                      <td>vinupriyarajasekaran@gmail.com</td>
+                      <td>8344641551</td>
+                      <td>10 October 2022</td>
+                      <td>-</td>
+                      <td>COD</td>
+                      <td>
+                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                            <option value="0">Status</option>
+                            <option value="1">Pending</option>
+                            <option value="2">Accepted &amp; Processing</option>
+                            <option value="3">Packaged</option>
+                            <option value="4">In Transit</option>
+                            <option value="5">Delivered</option>
+                            <option value="7" selected="selected">Failed</option>
+                            <option value="8">Cancellation in Process</option>
+                            <option value="9">Return in Process</option>
+                            <option value="10">Return Accepted</option>
+                            <option value="11">Cancellation Accepted</option>
+                            <option value="12">Cancellation Resolved</option>
+                            <option value="13">Return Resolved</option>
+                         </select>
+                      </td>
+                      <td><textarea name="sub_text_1" id="sub_text_1" class="form-control ord-textarea"></textarea></td>
+                      <td>Rs. 1,057.00</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="#" class="dropdown-item"><i class="bi bi-printer"></i> Print</a>
+                               <a href="orders-details.php" class="dropdown-item"><i class="bi bi-file-earmark"></i> View</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr class="fnt-11 rwsoutfordel">
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>AV-1000247</td>
+                      <td>Vinupriya<br /> Rajasekaran</td>
+                      <td>vinupriyarajasekaran@gmail.com</td>
+                      <td>8344641551</td>
+                      <td>10 October 2022</td>
+                      <td>-</td>
+                      <td>COD</td>
+                      <td>
+                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                            <option value="0">Status</option>
+                            <option value="1">Pending</option>
+                            <option value="2">Accepted &amp; Processing</option>
+                            <option value="3">Packaged</option>
+                            <option value="4">In Transit</option>
+                            <option value="5">Delivered</option>
+                            <option value="7" selected="selected">Failed</option>
+                            <option value="8">Cancellation in Process</option>
+                            <option value="9">Return in Process</option>
+                            <option value="10">Return Accepted</option>
+                            <option value="11">Cancellation Accepted</option>
+                            <option value="12">Cancellation Resolved</option>
+                            <option value="13">Return Resolved</option>
+                         </select>
+                      </td>
+                      <td><textarea name="sub_text_1" id="sub_text_1" class="form-control ord-textarea"></textarea></td>
+                      <td>Rs. 1,057.00</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="#" class="dropdown-item"><i class="bi bi-printer"></i> Print</a>
+                               <a href="#" class="dropdown-item"><i class="bi bi-file-earmark"></i> View</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr class="fnt-11 rwscanceled">
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>AV-1000247</td>
+                      <td>Vinupriya<br /> Rajasekaran</td>
+                      <td>vinupriyarajasekaran@gmail.com</td>
+                      <td>8344641551</td>
+                      <td>10 October 2022</td>
+                      <td>-</td>
+                      <td>COD</td>
+                      <td>
+                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                            <option value="0">Status</option>
+                            <option value="1">Pending</option>
+                            <option value="2">Accepted &amp; Processing</option>
+                            <option value="3">Packaged</option>
+                            <option value="4">In Transit</option>
+                            <option value="5">Delivered</option>
+                            <option value="7" selected="selected">Failed</option>
+                            <option value="8">Cancellation in Process</option>
+                            <option value="9">Return in Process</option>
+                            <option value="10">Return Accepted</option>
+                            <option value="11">Cancellation Accepted</option>
+                            <option value="12">Cancellation Resolved</option>
+                            <option value="13">Return Resolved</option>
+                         </select>
+                      </td>
+                      <td><textarea name="sub_text_1" id="sub_text_1" class="form-control ord-textarea"></textarea></td>
+                      <td>Rs. 1,057.00</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="#" class="dropdown-item"><i class="bi bi-printer"></i> Print</a>
+                               <a href="#" class="dropdown-item"><i class="bi bi-file-earmark"></i> View</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr class="fnt-11 rwspending">
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>AV-1000247</td>
+                      <td>Vinupriya<br /> Rajasekaran</td>
+                      <td>vinupriyarajasekaran@gmail.com</td>
+                      <td>8344641551</td>
+                      <td>10 October 2022</td>
+                      <td>-</td>
+                      <td>COD</td>
+                      <td>
+                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                            <option value="0">Status</option>
+                            <option value="1">Pending</option>
+                            <option value="2">Accepted &amp; Processing</option>
+                            <option value="3">Packaged</option>
+                            <option value="4">In Transit</option>
+                            <option value="5">Delivered</option>
+                            <option value="7" selected="selected">Failed</option>
+                            <option value="8">Cancellation in Process</option>
+                            <option value="9">Return in Process</option>
+                            <option value="10">Return Accepted</option>
+                            <option value="11">Cancellation Accepted</option>
+                            <option value="12">Cancellation Resolved</option>
+                            <option value="13">Return Resolved</option>
+                         </select>
+                      </td>
+                      <td><textarea name="sub_text_1" id="sub_text_1" class="form-control ord-textarea"></textarea></td>
+                      <td>Rs. 1,057.00</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="#" class="dropdown-item"><i class="bi bi-printer"></i> Print</a>
+                               <a href="#" class="dropdown-item"><i class="bi bi-file-earmark"></i> View</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+
+
+                   <tr class="fnt-11">
+                      <td colspan="11">
+                         <div class="pagination">
+                            <div class="results">
+                               <a href="#" class="search-next">Prev &#xab;</a>
+                               <a href="#"><b>1</b></a>
+                               <a href="#">2</a>
+                               <a href="#" class="search-next">Next &#xbb;</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+
+
+
+
+
+
+
+
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

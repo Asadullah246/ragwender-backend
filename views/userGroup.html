@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Admin Users Group</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+             <button type="button" class="btn btn-primary btn-icon-right" onclick="window.location.href='/v1/users/group-insert'">Insert </button>  
+          </li>
+          <li class="nav-item">
+             <button type="button" class="btn btn-secondary btn-icon-right">Delete</button>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+
+ <!-- content -->
+ <div class="content ">
+
+
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive" tabindex="1">
+             <table id="users" class="table table-custom table-lg">
+                <thead>
+                   <th>User Id</th>
+                   <th><input class="form-check-input" type="checkbox"></th>
+                   <th>Name</th>
+                   <th>Permission</th>
+                   <th>Action</th>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td>13</td>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>catalog only</td>
+                      <td>catalog,sales,reports</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="users-group-edit.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>10</td>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>Demonstrationa</td>
+                      <td>catalog</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="users-group-edit.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>12</td>
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>Top Administrator</td>
+                      <td>admin</td>
+                      <td>
+                         <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-white" aria-haspopup="true" aria-expanded="false">
+                               <i class="bi bi-three-dots"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                               <a href="users-group-edit.php" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                         </div>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+
+
+
+ </div>
+{% endblock %}
