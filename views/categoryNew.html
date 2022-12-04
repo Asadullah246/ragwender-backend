@@ -24,14 +24,14 @@
          <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home" role="tab"
             aria-controls="pills-home" aria-selected="false">General</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
          <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" href="#pills-contact" role="tab"
             aria-controls="pills-contact" aria-selected="false"> Custom Size</a>
       </li>
       <li class="nav-item">
          <a class="nav-link" id="pills-image-tab" data-bs-toggle="pill" href="#pills-image" role="tab"
             aria-controls="pills-image" aria-selected="false">Ready Image</a>
-      </li>
+      </li> -->
       <li class="nav-item">
          <a class="nav-link" id="pills-seo-tab" data-bs-toggle="pill" href="#pills-seo" role="tab"
             aria-controls="pills-seo" aria-selected="false">SEO Details</a>
@@ -81,12 +81,12 @@
                         </tr>
                         <tr>
                            <td> Hide in Menu</td>
-                           <td><input name="chkfeatured" type="checkbox" id="chkfeatured" class="hideMenu" required />
+                           <td><input name="chkfeatured" type="checkbox" id="chkfeaturedHideMenu" class="hideMenu" required />
                            </td>
                         </tr>
                         <tr>
                            <td> Show on Home page</td>
-                           <td><input name="chkfeatured" type="checkbox" id="chkfeatured" class="showOnHomePage"
+                           <td><input name="chkfeatured" type="checkbox" id="chkfeaturedShowOnHomePage" class="showOnHomePage"
                                  required /></td>
                         </tr>
                         <tr>
@@ -95,8 +95,8 @@
                               <select name="sources" id="sources" class="custom-select sources status"
                                  data-placeholder="Select Status">
                                  <option value="0">Select Status</option>
-                                 <option value="1" selected="selected">Enabled</option>
-                                 <option value="2">Disabled</option>
+                                 <option value="1" selected>Enabled</option>
+                                 <option value="0">Disabled</option>
                               </select>
                            </td>
                         </tr>
@@ -104,7 +104,7 @@
                         <tr>
                            <td>States </td>
                            <td>
-                              <!-- <select name="sources" id="sources" class="custom-select sources" data-placeholder="Select" multiple> -->
+                              <!-- <select name="#" id="#" class="custom-select #" data-placeholder="Select" multiple> -->
                               <select id="country-state" name="country-state" class="states" multiple>
                                  <option value="0">Select </option>
                                  <option value="AN">Andaman and Nicobar Islands</option>
@@ -167,7 +167,7 @@
          </div>
       </div>
 
-      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+      <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
          <div class="card">
             <div class="card-body">
                <div class="table-responsive" tabindex="1">
@@ -222,10 +222,9 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
 
-
-      <div class="tab-pane fade" id="pills-image" role="tabpanel" aria-labelledby="pills-image-tab">
+      <!-- <div class="tab-pane fade" id="pills-image" role="tabpanel" aria-labelledby="pills-image-tab">
          <div class="card">
             <div class="card-body">
                <div class="table-responsive" tabindex="1">
@@ -289,7 +288,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
 
       <div class="tab-pane fade" id="pills-seo" role="tabpanel" aria-labelledby="pills-seo-tab">
          <div class="card">
@@ -303,22 +302,22 @@
                         <tr>
                            <td>Page Title</td>
                            <td><input type="text" class="form-control" aria-label="lname"
-                                 aria-describedby="basic-addon3"></td>
+                                 aria-describedby="basic-addon3" id="metatitle"></td>
                         </tr>
                         <tr>
                            <td>Meta Description</td>
                            <td><input type="text" class="form-control" aria-label="lname"
-                                 aria-describedby="basic-addon3"></td>
+                                 aria-describedby="basic-addon3" id="meta_description"></td>
                         </tr>
                         <tr>
                            <td>Meta Keywords</td>
                            <td><input type="text" class="form-control" aria-label="lname"
-                                 aria-describedby="basic-addon3"></td>
+                                 aria-describedby="basic-addon3" id="meta_keyword"></td>
                         </tr>
                         <tr>
                            <td>SEO URL</td>
                            <td><input type="text" class="form-control" aria-label="lname"
-                                 aria-describedby="basic-addon3"></td>
+                                 aria-describedby="basic-addon3" id="seourl"></td>
                         </tr>
 
                         <tr>
@@ -345,64 +344,83 @@
 
 {% block customjs %}
 <script>
-   const categoryName = document.querySelector(".categoryName")
-   const smallTitle = document.querySelector(".smallTitle")
-   const seoPrefix = document.querySelector(".seoPrefix")
-   const parentCategory = document.querySelector(".parentCategory")
-   const hideMenu = document.querySelector(".hideMenu")
-   const showOnHomePage = document.querySelector(".showOnHomePage")
-   const status = document.querySelector(".status")
-   const states = document.querySelector(".states")
-   let description = document.querySelector(".description")
-   let menuImg = document.querySelector(".menuImg")
-   let bannerImg = document.querySelector(".bannerImg")
-   let catImg = document.querySelector(".catImg")
-
-
+   
+   const slugify = str => str.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
    function saveGeneral() {
-
-
-      const generalData = {
-         category: categoryName.value,
-         small: smallTitle.value,
-         seo: seoPrefix.value
-      }
-      console.log(generalData);
-
       const formData = new FormData();
-      // formData.append("fileToUpload", menuImg.files[0]);
 
+      const categoryName = $('.categoryName').val()
+      const slugName = slugify(categoryName)
+      const smallTitle = $('.smallTitle').val()
+      const seoPrefix = $('.seoPrefix').val()
+      const parentCategory = $('.parentCategory').val()
+      const chkfeaturedHideMenu = $('#chkfeaturedHideMenu').is(':checked') === true ?'1':'0';
+      const chkfeaturedShowOnHomePage = $('#chkfeaturedShowOnHomePage').is(':checked') === true ?'1':'0';
+      const country = $('#country-state').val()
+      const sources = $( "#sources option:selected" ).val();
+      const description = CKEDITOR.instances['text_editor'].getData();
+      const menuImg = $('.menuImg')[0].files[0];
+      const bannerImg = $('.bannerImg')[0].files[0];
+      const catImg = $('.catImg')[0].files[0];
+      //Seo Details
+      const metatitle = $('#metatitle').val()
+      const meta_description = $('#meta_description').val()
+      const meta_keyword = $('#meta_keyword').val()
+      const seourl = $('#seourl').val()
 
-      // var ins = document.getElementById('fileToUpload').files.length;
+      formData.append('categoryName', categoryName);
+      formData.append('slugName', slugName);
+      formData.append('smallTitle', smallTitle);
+      formData.append('seoPrefix', seoPrefix);
+      formData.append('parentCategory', parentCategory);
+      formData.append('chkfeaturedHideMenu', chkfeaturedHideMenu);
+      formData.append('chkfeaturedShowOnHomePage', chkfeaturedShowOnHomePage);
+      formData.append('country', country);
+      formData.append('sources', sources);
+      formData.append('description', description);
 
-      // formData.append("fileToUpload[]", menuImg.files[0]);
-      // formData.append("fileToUpload[]", bannerImg.files[0]);
-      // formData.append("fileToUpload[]", catImg.files[0]);
-      formData.append("fileToUpload", catImg.file);
-
-      console.log(formData);
-
-      let data={
-         formda:formData
+      formData.append('metatitle', metatitle);
+      formData.append('meta_description', meta_description);
+      formData.append('meta_keyword', meta_keyword);
+      formData.append('seourl', seourl.length> 0 ? slugName : seourl);
+      const timestamp = Date.now();
+      if(catImg === undefined){
+         formData.append('catImg', 'uploads/categories/no_image.jpg')
+      }else{
+         formData.append('image', catImg, `${slugName}_${timestamp}.jpeg`);
+         formData.append('catImg', `uploads/categories/${slugName}_${timestamp}.jpeg`)
       }
 
-      fetch("/v1/category/new", {
-         method: "POST",
-         // headers: {
-          "content-type": false, 
-         //"Content-Type": "multipart/form-data "   
-         // },
-         // body: JSON.stringify(generalData)
-         body: JSON.stringify(data)  
+      if(menuImg === undefined){
+         formData.append('menuImg', 'uploads/categories/no_image.jpg')
+      }else{
+         formData.append('image', menuImg, `${slugName}_menu_${timestamp}.jpeg`);
+         formData.append('menuImg', `uploads/categories/${slugName}_menu_${timestamp}.jpeg`)
+      }
 
+      if(bannerImg === undefined){
+         formData.append('bannerImg', 'uploads/categories/no_image.jpg')
+      }else{
+         formData.append('image', bannerImg, `${slugName}_banner_${timestamp}.jpeg`);
+         formData.append('bannerImg', `uploads/categories/${slugName}_banner_${timestamp}.jpeg`)
+      }
+
+      fetch('/v1/category/new', {
+         method: 'POST',
+         body: formData
       })
-        // .then(response => response.json()) 
-         .then(data => {
-            console.log(data);
-         })
-         .catch(err => {
-            console.log("err is", err);
-         })
+     .then((response) => response.json())
+     .then((response) => {
+       if(response.success){
+         alert('Category Saved');
+         window.location.reload()
+       }
+     })
+     .catch((err) => {
+       console.error(err);
+       alert(err);
+       window.location.reload()
+      })
    }
 </script>
 {% endblock customjs %}

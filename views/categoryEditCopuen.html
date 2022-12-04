@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- header -->
+<div class="header">
+    <div class="page-title">Coupon Insert</div>
+    <div class="header-bar ms-auto">
+       <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+       </ul>
+    </div>
+ </div>
+ <!-- ./ header -->
+ <!-- content -->
+ <div class="content ">
+    <div class="card">
+       <div class="card-body">
+          <div class="table-responsive" tabindex="1" style="overflow: hidden; outline: none;">
+             <table id="users" class="table table-custom table-lg">
+                <tbody>
+                   <tr>
+                      <td>Coupon Name</td>
+                      <td><input name="txtcatname" type="text" id="txtcatname" value="GET 10% EXTRA DISCOUNT" class="form-control" aria-label="txtcatname" aria-describedby="basic-addon1"> </td>
+                      <td>&nbsp;&nbsp;</td>
+                   </tr>
+                   <tr>
+                      <td>Code</td>
+                      <td><input name="code" type="text" id="code" value="VENCO102" class="form-control" aria-label="code" aria-describedby="basic-addon2"> </td>
+                      <td>&nbsp;&nbsp;</td>
+                   </tr>
+                   <tr>
+                      <td>Type</td>
+                      <td>
+                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Type">
+                            <option value="0">Type</option>
+                            <option value="1" selected="selected">Percentage</option>
+                            <option value="2">Fixed Amount</option>
+                         </select>
+                      </td>
+                      <td>&nbsp;&nbsp;</td>
+                   </tr>
+                   <tr>
+                      <td>Discount</td>
+                      <td><input name="code" type="text" id="code" value="10.0000" class="form-control" aria-label="code" aria-describedby="basic-addon2"></td>
+                      <td>&nbsp;&nbsp;</td>
+                   </tr>
+                   <tr>
+                      <td>Total Amount</td>
+                      <td><input name="code" type="text" id="code" value="50.0000" class="form-control" aria-label="code" aria-describedby="basic-addon2"></td>
+                      <td>&nbsp;&nbsp;</td>
+                   </tr>
+                   <tr>
+                      <td>Date Start</td>
+                      <td><input name="code" type="text" id="code" value="2021-11-01" class="form-control" aria-label="code" aria-describedby="basic-addon2"> </td>
+                      <td>&nbsp;&nbsp;</td>
+                   </tr>
+                   <tr>
+                      <td>Date End</td>
+                      <td><input name="code" type="text" id="code" value="2021-12-31" class="form-control" aria-label="code" aria-describedby="basic-addon2"> </td>
+                      <td>&nbsp;&nbsp;</td>
+                   </tr>
+                   <tr>
+                      <td>Status</td>
+                      <td>
+                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
+                            <option value="0">Status</option>
+                            <option value="1">Enabled</option>
+                            <option value="2" selected="selected">Disabled</option>
+                         </select>
+                      </td>
+                      <td>&nbsp;&nbsp;</td>
+                   </tr>
+                   <tr>
+                      <td>Uses Per Coupon: <br /><small>The maximum number of times the coupon can be used by any customer. Leave blank for unlimited</small></td>
+                      <td><input name="code" type="text" id="code" value="10" class="form-control" aria-label="code" aria-describedby="basic-addon2"> </td>
+                      <td>&nbsp;&nbsp;</td>
+                   </tr>
+                   <tr>
+                      <td>Uses Per Customer: <br /><small>The maximum number of times the coupon can be used by a single customer. Leave blank for unlimited</small></td>
+                      <td><input name="code" type="text" id="code" value="" class="form-control" aria-label="code" aria-describedby="basic-addon2"> </td>
+                      <td>&nbsp;&nbsp;</td>
+                   </tr>
+                   <tr>
+                      <td colspan="3">
+                         <button class="btn btn-primary" type="button" id="btn-email" name="submit">
+                            <span>Submit</span>
+                         </button>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

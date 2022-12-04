@@ -1,96 +1,304 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- header -->
+{{'selected' if (rows[0]['status'] != 0)}}
 <div class="header">
-    <div class="page-title">Coupon Insert</div>
-    <div class="header-bar ms-auto">
-       <ul class="navbar-nav justify-content-end gap-3">
-          <li class="nav-item">
-       </ul>
-    </div>
- </div>
- <!-- ./ header -->
- <!-- content -->
- <div class="content ">
-    <div class="card">
-       <div class="card-body">
-          <div class="table-responsive" tabindex="1" style="overflow: hidden; outline: none;">
-             <table id="users" class="table table-custom table-lg">
-                <tbody>
-                   <tr>
-                      <td>Coupon Name</td>
-                      <td><input name="txtcatname" type="text" id="txtcatname" value="GET 10% EXTRA DISCOUNT" class="form-control" aria-label="txtcatname" aria-describedby="basic-addon1"> </td>
-                      <td>&nbsp;&nbsp;</td>
-                   </tr>
-                   <tr>
-                      <td>Code</td>
-                      <td><input name="code" type="text" id="code" value="VENCO102" class="form-control" aria-label="code" aria-describedby="basic-addon2"> </td>
-                      <td>&nbsp;&nbsp;</td>
-                   </tr>
-                   <tr>
-                      <td>Type</td>
-                      <td>
-                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Type">
-                            <option value="0">Type</option>
-                            <option value="1" selected="selected">Percentage</option>
-                            <option value="2">Fixed Amount</option>
-                         </select>
-                      </td>
-                      <td>&nbsp;&nbsp;</td>
-                   </tr>
-                   <tr>
-                      <td>Discount</td>
-                      <td><input name="code" type="text" id="code" value="10.0000" class="form-control" aria-label="code" aria-describedby="basic-addon2"></td>
-                      <td>&nbsp;&nbsp;</td>
-                   </tr>
-                   <tr>
-                      <td>Total Amount</td>
-                      <td><input name="code" type="text" id="code" value="50.0000" class="form-control" aria-label="code" aria-describedby="basic-addon2"></td>
-                      <td>&nbsp;&nbsp;</td>
-                   </tr>
-                   <tr>
-                      <td>Date Start</td>
-                      <td><input name="code" type="text" id="code" value="2021-11-01" class="form-control" aria-label="code" aria-describedby="basic-addon2"> </td>
-                      <td>&nbsp;&nbsp;</td>
-                   </tr>
-                   <tr>
-                      <td>Date End</td>
-                      <td><input name="code" type="text" id="code" value="2021-12-31" class="form-control" aria-label="code" aria-describedby="basic-addon2"> </td>
-                      <td>&nbsp;&nbsp;</td>
-                   </tr>
-                   <tr>
-                      <td>Status</td>
-                      <td>
-                         <select name="sources" id="sources" class="custom-select sources" data-placeholder="Status">
-                            <option value="0">Status</option>
-                            <option value="1">Enabled</option>
-                            <option value="2" selected="selected">Disabled</option>
-                         </select>
-                      </td>
-                      <td>&nbsp;&nbsp;</td>
-                   </tr>
-                   <tr>
-                      <td>Uses Per Coupon: <br /><small>The maximum number of times the coupon can be used by any customer. Leave blank for unlimited</small></td>
-                      <td><input name="code" type="text" id="code" value="10" class="form-control" aria-label="code" aria-describedby="basic-addon2"> </td>
-                      <td>&nbsp;&nbsp;</td>
-                   </tr>
-                   <tr>
-                      <td>Uses Per Customer: <br /><small>The maximum number of times the coupon can be used by a single customer. Leave blank for unlimited</small></td>
-                      <td><input name="code" type="text" id="code" value="" class="form-control" aria-label="code" aria-describedby="basic-addon2"> </td>
-                      <td>&nbsp;&nbsp;</td>
-                   </tr>
-                   <tr>
-                      <td colspan="3">
-                         <button class="btn btn-primary" type="button" id="btn-email" name="submit">
-                            <span>Submit</span>
-                         </button>
-                      </td>
-                   </tr>
-                </tbody>
-             </table>
-          </div>
-       </div>
-    </div>
- </div>
+   <div class="page-title">Update Category</div>
+   <div class="header-bar ms-auto">
+      <ul class="navbar-nav justify-content-end gap-3">
+         <li class="nav-item">
+            <button type="button" class="btn btn-primary btn-icon-right" onclick="saveData()">Save </button>
+         </li>
+         <li class="nav-item">
+            <button type="button" class="btn btn-secondary btn-icon-right">Cancel </button>
+         </li>
+      </ul>
+   </div>
+</div>
+<!-- ./ header -->
+
+<!-- content -->
+<div class="content ">
+   <ul class="nav nav-pills" id="pills-tab" role="tablist">
+      <li class="nav-item">
+         <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home" role="tab"
+            aria-controls="pills-home" aria-selected="false">General</a>
+      </li>
+      
+      <li class="nav-item">
+         <a class="nav-link" id="pills-seo-tab" data-bs-toggle="pill" href="#pills-seo" role="tab"
+            aria-controls="pills-seo" aria-selected="false">SEO Details</a>
+      </li>
+   </ul>
+
+
+   <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+         <div class="card">
+            <div class="card-body">
+               <div class="table-responsive" tabindex="1">
+                  <table id="users" class="table table-custom table-lg">
+                     <tbody>
+                        <tr>
+                           <td>Category Name</td>
+                           <td><input type="text" class="form-control categoryName" aria-label="categoryName"
+                                 aria-describedby="basic-addon1" required value="{{rows[0]['name']}}"></td>
+                        </tr>
+                        <tr>
+                           <td>Small Title(For Admin use)</td>
+                           <td><input type="text" class="form-control smallTitle" aria-label="fname"
+                                 aria-describedby="basic-addon2" required value="{{rows[0]['subtitle']}}"></td>
+                        </tr>
+                        <tr>
+                           <td>SEO Prefix</td>
+                           <td><input type="text" class="form-control seoPrefix" aria-label="lname"
+                                 aria-describedby="basic-addon3" required value="{{rows[0]['seoprefix_product']}}"></td>
+                        </tr>
+                        <tr>
+                           <td>Parent Category</td>
+                           <td><input type="text" class="form-control parentCategory" aria-label="lname"
+                                 aria-describedby="basic-addon3" required value="{{rows[0]['parent_id']}}"></td>
+                        </tr>
+
+                        <tr>
+                           <td> Category Menu image</td>
+                           <td><input name="file" id="status" type="file" class="menuImg" required></td>
+                           <input type="text" class="d-none" id="menuImg" value="{{rows[0]['menuimage']}}">
+                        </tr>
+                        <tr>
+                           <td> Category Banner Image</td>
+                           <td><input name="file" id="status" type="file" class="bannerImg" required></td>
+                           <input type="text" class="d-none" id="bannerImg" value="{{rows[0]['banner_image']}}">
+                        </tr>
+                        <tr>
+                           <td> Category Image</td>
+                           <td><input name="file" id="status" type="file" class="catImg"  required></td>
+                           <input type="text" class="d-none" id="catImg" value="{{rows[0]['image']}}">
+                        </tr>
+                        <tr>
+                           <td> Hide in Menu</td>
+                           <td><input name="chkfeatured" type="checkbox" id="chkfeaturedHideMenu" class="hideMenu" {{'checked' if (rows[0]['hide_in_menu'] != 0)}} required />
+                           </td>
+                        </tr>
+                        <tr>
+                           <td> Show on Home page</td>
+                           <td><input name="chkfeatured" type="checkbox" id="chkfeaturedShowOnHomePage" class="showOnHomePage" {{'checked' if (rows[0]['onhome'] != 0)}}
+                                 required /></td>
+                        </tr>
+                        <tr>
+                           <td>Status</td>
+                           <td>
+                              <select name="sources" id="sources" class="custom-select sources status"
+                                 data-placeholder="Select Status">
+                                 <option value="0" {{'selected' if (rows[0]['status'] == 0)}}>Select Status</option>
+                                 <option value="1" {{'selected' if (rows[0]['status'] != 0)}}>Enabled</option>
+                                 <option value="0" {{'selected' if (rows[0]['status'] == 0)}}>Disabled</option>
+                              </select>
+                           </td>
+                        </tr>
+
+                        <!-- <tr>
+                           <td>States</td>
+                           <td>
+                              
+                              <select id="country-state" name="country-state" class="states" multiple>
+                                 <option value="0">Select </option>
+                                 <option value="AN">Andaman and Nicobar Islands</option>
+                                 <option value="AP">Andhra Pradesh</option>
+                                 <option value="AR">Arunachal Pradesh</option>
+                                 <option value="AS">Assam</option>
+                                 <option value="BR">Bihar</option>
+                                 <option value="CH">Chandigarh</option>
+                                 <option value="CT">Chhattisgarh</option>
+                                 <option value="DN">Dadra and Nagar Haveli</option>
+                                 <option value="DD">Daman and Diu</option>
+                                 <option value="DL">Delhi</option>
+                                 <option value="GA">Goa</option>
+                                 <option value="GJ">Gujarat</option>
+                                 <option value="HR">Haryana</option>
+                                 <option value="HP">Himachal Pradesh</option>
+                                 <option value="JK">Jammu and Kashmir</option>
+                                 <option value="JH">Jharkhand</option>
+                                 <option value="KA">Karnataka</option>
+                                 <option value="KL">Kerala</option>
+                                 <option value="LA">Ladakh</option>
+                                 <option value="LD">Lakshadweep</option>
+                                 <option value="MP">Madhya Pradesh</option>
+                                 <option value="MH">Maharashtra</option>
+                                 <option value="MN">Manipur</option>
+                                 <option value="ML">Meghalaya</option>
+                                 <option value="MZ">Mizoram</option>
+                                 <option value="NL">Nagaland</option>
+                                 <option value="OR">Odisha</option>
+                                 <option value="PY">Puducherry</option>
+                                 <option value="PB">Punjab</option>
+                                 <option value="RJ">Rajasthan</option>
+                                 <option value="SK">Sikkim</option>
+                                 <option value="TN">Tamil Nadu</option>
+                                 <option value="TG">Telangana</option>
+                                 <option value="TR">Tripura</option>
+                                 <option value="UP">Uttar Pradesh</option>
+                                 <option value="UT">Uttarakhand</option>
+                                 <option value="WB">West Bengal</option>
+                              </select>
+                           </td>
+                        </tr> -->
+
+                        <tr>
+                           <td>Description</td>
+                           <td>
+                              <textarea name="text_editor" class="form-control description" id="text_editor">
+                                 {{rows[0]['description']}}
+                              </textarea>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="2"><button class="btn btn-primary" type="button" name="submit"
+                                 onclick="saveGeneral()"><span>Save</span></button> &nbsp; <button
+                                 class="btn btn-secondary btn-icon-right" type="button"
+                                 name="cancel"><span>Cancel</span></button></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-seo" role="tabpanel" aria-labelledby="pills-seo-tab">
+         <div class="card">
+            <div class="card-body">
+               <div class="table-responsive" tabindex="1">
+                  <table id="users" class="table table-custom table-lg">
+                     <tbody>
+                        <tr>
+                           <th colspan="2">SEO Details</th>
+                        </tr>
+                        <tr>
+                           <td>Page Title</td>
+                           <td><input type="text" class="form-control" aria-label="lname"
+                                 aria-describedby="basic-addon3" id="metatitle" value="{{rows[0]['metatitle']}}"></td>
+                        </tr>
+                        <tr>
+                           <td>Meta Description</td>
+                           <td><input type="text" class="form-control" aria-label="lname"
+                                 aria-describedby="basic-addon3" id="meta_description" value="{{rows[0]['meta_description']}}"></td>
+                        </tr>
+                        <tr>
+                           <td>Meta Keywords</td>
+                           <td><input type="text" class="form-control" aria-label="lname"
+                                 aria-describedby="basic-addon3" id="meta_keyword" value="{{rows[0]['meta_keyword']}}"></td>
+                        </tr>
+                        <tr>
+                           <td>SEO URL</td>
+                           <td><input type="text" class="form-control" aria-label="lname"
+                                 aria-describedby="basic-addon3" id="seourl" value="{{rows[0]['seourl']}}"></td>
+                        </tr>
+
+                        <tr>
+                           <td colspan="2"><button class="btn btn-primary" type="button"
+                                 name="submit"><span>Save</span></button> &nbsp; <button
+                                 class="btn btn-secondary btn-icon-right" type="button"
+                                 name="cancel"><span>Cancel</span></button></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<style type="text/css">
+   .table>:not(:last-child)>:last-child>* {
+      border-bottom: 1px solid rgba(0, 0, 0, .125);
+   }
+</style>
+
 {% endblock %}
+
+{% block customjs %}
+<script>
+   
+   const slugify = str => str.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
+   function saveGeneral() {
+      const formData = new FormData();
+
+      const categoryName = $('.categoryName').val()
+      const slugName = slugify(categoryName)
+      const smallTitle = $('.smallTitle').val()
+      const seoPrefix = $('.seoPrefix').val()
+      const parentCategory = $('.parentCategory').val()
+      const chkfeaturedHideMenu = $('#chkfeaturedHideMenu').is(':checked') === true ?'1':'0';
+      const chkfeaturedShowOnHomePage = $('#chkfeaturedShowOnHomePage').is(':checked') === true ?'1':'0';
+      //const country = $('#country-state').val()
+      const sources = $( "#sources option:selected" ).val();
+      const description = CKEDITOR.instances['text_editor'].getData();
+      const prevMenuImg = $('#menuImg').val();
+      const prevBannerImg = $('#bannerImg').val();
+      const prevCatImg = $('#catImg').val();
+      const menuImg = $('.menuImg')[0].files[0];
+      const bannerImg = $('.bannerImg')[0].files[0];
+      const catImg = $('.catImg')[0].files[0];
+      //Seo Details
+      const metatitle = $('#metatitle').val()
+      const meta_description = $('#meta_description').val()
+      const meta_keyword = $('#meta_keyword').val()
+      const seourl = $('#seourl').val()
+
+      formData.append('categoryName', categoryName);
+      formData.append('slugName', slugName);
+      formData.append('smallTitle', smallTitle);
+      formData.append('seoPrefix', seoPrefix);
+      formData.append('parentCategory', parentCategory);
+      formData.append('chkfeaturedHideMenu', chkfeaturedHideMenu);
+      formData.append('chkfeaturedShowOnHomePage', chkfeaturedShowOnHomePage);
+      //formData.append('country', country);
+      formData.append('sources', sources);
+      formData.append('description', description);
+
+      formData.append('metatitle', metatitle);
+      formData.append('meta_description', meta_description);
+      formData.append('meta_keyword', meta_keyword);
+      formData.append('seourl', seourl.length> 0 ? slugName : seourl);
+      const timestamp = Date.now();
+      if(catImg === undefined){
+         formData.append('catImg', prevCatImg)
+      }else{
+         formData.append('image', catImg, `${slugName}_${timestamp}.jpeg`);
+         formData.append('catImg', `uploads/categories/${slugName}_${timestamp}.jpeg`)
+      }
+
+      if(menuImg === undefined){
+         formData.append('menuImg', prevMenuImg)
+      }else{
+         formData.append('image', menuImg, `${slugName}_menu_${timestamp}.jpeg`);
+         formData.append('menuImg', `uploads/categories/${slugName}_menu_${timestamp}.jpeg`)
+      }
+
+      if(bannerImg === undefined){
+         formData.append('bannerImg', prevBannerImg)
+      }else{
+         formData.append('image', bannerImg, `${slugName}_banner_${timestamp}.jpeg`);
+         formData.append('bannerImg', `uploads/categories/${slugName}_banner_${timestamp}.jpeg`)
+      }
+
+      fetch('/v1/category/edit/2', {
+         method: 'POST',
+         body: formData
+      })
+     .then((response) => response.json())
+     .then((response) => {
+       if(response.success){
+         alert('Category Saved');
+         window.location.reload()
+       }
+     })
+     .catch((err) => {
+       console.error(err);
+       alert(err);
+       window.location.reload()
+      })
+   }
+</script>
+{% endblock customjs %}

@@ -2,20 +2,14 @@ const express = require('express');
 const app = express();
 const cors = require("cors");
 require("dotenv").config();
-app.use(cors());
 const port = process.env.PORT || 5000;
 const path = require('path');
 const nunjucks = require("nunjucks")
 const pool = require("./configs/database")
 const errorHandler = require("./middleware/errorHandler")
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 const session = require('express-session');
 const loginStatus=require("./middleware/LoginStatus")
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-
-const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
 
 const otherRoutes = require("./routes/v1/other.routes")
 const bannerRoutes = require("./routes/v1/banner.routes")
@@ -31,7 +25,11 @@ const salesRoutes = require("./routes/v1/sales.routes")
 const testimonialRoutes = require("./routes/v1/testimonial.routes")
 const usersRoutes = require("./routes/v1/users.routes")
 const editContentRoutes = require("./routes/v1/editContentPage.routes")
+const apiRoute = require("./routes/v1/api.routes")
 
+app.use(cors());
+app.use(express.urlencoded({extended: true}))
+app.use(express.json());
 
 app.use(express.static(path.resolve(__dirname, "assets")));
 nunjucks.configure(path.resolve(__dirname, "views"), {
@@ -70,6 +68,7 @@ app.use("/v1/testimonials", testimonialRoutes);
 app.use("/v1/sales-orders", salesRoutes);
 app.use("/v1/users", usersRoutes);
 app.use("/v1/edit-content-page", editContentRoutes);
+app.use("/api", apiRoute);
 
 
 

@@ -5,7 +5,6 @@ const loginStatus = ( req, res, next) => {
     else{
       next() ; 
         // res.redirect('/v1/login')          
-     
     }  
   
     
