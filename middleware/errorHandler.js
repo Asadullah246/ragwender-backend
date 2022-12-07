@@ -1,5 +1,5 @@
 const errorHandler  = (err, req, res, next) => {
-    res.send(err.message);
+    res.status(500).send(err.message);
     // if (req.headersSent) {
     //     return next(err);
     //   }

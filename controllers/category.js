@@ -24,7 +24,7 @@ exports.getCategoryEdit = (req, res) => {
         connection.query('SELECT * FROM category WHERE category_id = ?',[req.params.id], (err, rows) => {
             connection.release();
             if (!err)
-                res.render('categoryEdit.html', { title: "Edit Category", rows });
+                res.render('categoryEdit.html', { title: "Edit Category", rows, id: req.params.id });
             else
                 console.log(err)
         })
@@ -50,7 +50,7 @@ exports.postCategoryEdit = (req, res) => {
             console.log(req.body)
             pool.getConnection((err, connection) => {
                 if(err) throw err;
-                pool.query('UPDATE category SET name = ? ,subtitle = ? ,description = ? , status = ? , parent_id = ? , hide_in_menu = ? , onhome = ? , image = ? , menuimage = ? , banner_image = ? , metatitle = ? , meta_description = ? , meta_keyword = ? , seourl = ? , seoprefix_product = ? , date_modified = ? WHERE category_id = ?',[req.body.categoryName,req.body.smallTitle,req.body.description,req.body.sources,req.body.parentCategory,req.body.chkfeaturedHideMenu,req.body.chkfeaturedShowOnHomePage,req.body.catImg,req.body.menuImg,req.body.bannerImg,req.body.metatitle,req.body.meta_description,req.body.meta_keyword,req.body.seourl,req.body.seoPrefix,then,req.params.id],(err,rows)=>{
+                pool.query('UPDATE category SET name = ? ,subtitle = ? ,description = ? , status = ? , parent_id = ? , hide_in_menu = ? , onhome = ? , image = ? , menuimage = ? , banner_image = ? , metatitle = ? , meta_description = ? , meta_keyword = ? , seourl = ? , seoprefix_product = ? , date_modified = ? WHERE category_id = ?',[req.body.categoryName,req.body.smallTitle,req.body.description,req.body.sources,req.body.parentCategory,req.body.chkfeaturedHideMenu,req.body.chkfeaturedShowOnHomePage,req.body.catImg,req.body.menuImg,req.body.bannerImg,req.body.metatitle,req.body.meta_description,req.body.meta_keyword,req.body.seourl,req.body.seoPrefix,then,req.body.id],(err,rows)=>{
                     connection.release(); 
                     if(!err){
                         res.send({success: true});

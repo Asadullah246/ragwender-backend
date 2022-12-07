@@ -156,7 +156,7 @@
                         </tr>
                         <tr>
                            <td colspan="2"><button class="btn btn-primary" type="button" name="submit"
-                                 onclick="saveGeneral()"><span>Save</span></button> &nbsp; <button
+                                 onclick="saveData()"><span>Save</span></button> &nbsp; <button
                                  class="btn btn-secondary btn-icon-right" type="button"
                                  name="cancel"><span>Cancel</span></button></td>
                         </tr>
@@ -322,7 +322,7 @@
 
                         <tr>
                            <td colspan="2"><button class="btn btn-primary" type="button"
-                                 name="submit"><span>Save</span></button> &nbsp; <button
+                                 name="submit" onclick="saveData()"><span>Save</span></button> &nbsp; <button
                                  class="btn btn-secondary btn-icon-right" type="button"
                                  name="cancel"><span>Cancel</span></button></td>
                         </tr>
@@ -346,7 +346,7 @@
 <script>
    
    const slugify = str => str.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
-   function saveGeneral() {
+   function saveData() {
       const formData = new FormData();
 
       const categoryName = $('.categoryName').val()
