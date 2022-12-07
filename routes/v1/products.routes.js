@@ -15,6 +15,7 @@ router
 router
     .route("/insert")
     .get(loginStatus, products.getProductsInsert)
+    .post(loginStatus, products.postProductsInsert)
         
 
 
