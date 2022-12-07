@@ -1,4 +1,4 @@
-const geoip = require('geoip-lite');
+
 const pool = require("../configs/database")
 
 

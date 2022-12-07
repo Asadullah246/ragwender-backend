@@ -1,6 +1,6 @@
 const pool = require("../configs/database")
 const datetime = require("../configs/dateAndTime")
-const ip = require('ip');
+
 
 
 exports.notFound = (req, res) => {
