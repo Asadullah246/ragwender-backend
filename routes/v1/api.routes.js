@@ -5,10 +5,18 @@ const loginStatus=require("../../middleware/LoginStatus")
 
 router
     .route("/")
-    .get(loginStatus, api.notFound)
+    .get( api.notFound)
+
+router
+    .route("/login")
+    .get( api.getLogin)
+    .post(api.postLogin)
 
 router
     .route("/category")
-    .get(loginStatus, api.getCategory)
+    .get(api.getCategory)
+router
+    .route("/category2")
+    .get(api.getCategory2)
     
 module.exports = router;  
