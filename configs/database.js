@@ -9,3 +9,8 @@ const pool = mysql.createPool({
   });
 
   module.exports = pool; 
+
+//   DB_HOST = 'localhost'
+// DB_USER = 'root'
+// DB_PASS = ''
+// DB_NAME = 'db_rwsecom' 
